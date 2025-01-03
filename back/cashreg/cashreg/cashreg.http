@@ -1,0 +1,6 @@
+@cashreg_HostAddress = http://localhost:5243
+
+GET {{cashreg_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
