@@ -32,4 +32,12 @@ app.UseAuthorization();
 
 app.MapControllers();
 
+//Allow connection
+app.UseCors(opt =>
+{
+    opt.AllowAnyMethod();
+    opt.AllowAnyHeader();
+    opt.AllowAnyOrigin();
+});
+
 app.Run();

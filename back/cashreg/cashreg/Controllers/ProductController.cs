@@ -16,7 +16,6 @@ namespace cashreg.Controllers
             _cont = context;
         }
 
-
         [HttpGet]
         public async Task<ActionResult<List<Product>>> GetAllProducts()
         {
@@ -30,6 +29,16 @@ namespace cashreg.Controllers
             var product = await _cont.Products.FindAsync(id);
             if (product is null) return NotFound("Product not found");
             return Ok(product);
+        }
+
+        [HttpPost("create")]
+
+        public async Task<ActionResult> Create(Product product)
+        {
+            if (string.IsNullOrEmpty(product.name))
+            {
+                return BadRequest("")
+            }
         }
 
     }

@@ -3,24 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\alex.alyeksyeyenko\\Desktop\\cashreg\\back\\cashreg\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7D765523-9186-4F50-B66E-607A684DDF89}|cashreg\\cashreg.csproj|c:\\users\\alex.alyeksyeyenko\\desktop\\cashreg\\back\\cashreg\\cashreg\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7D765523-9186-4F50-B66E-607A684DDF89}|cashreg\\cashreg.csproj|solutionrelative:cashreg\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7D765523-9186-4F50-B66E-607A684DDF89}|cashreg\\cashreg.csproj|c:\\users\\alex.alyeksyeyenko\\desktop\\cashreg\\back\\cashreg\\cashreg\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7D765523-9186-4F50-B66E-607A684DDF89}|cashreg\\cashreg.csproj|solutionrelative:cashreg\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7D765523-9186-4F50-B66E-607A684DDF89}|cashreg\\cashreg.csproj|c:\\users\\alex.alyeksyeyenko\\desktop\\cashreg\\back\\cashreg\\cashreg\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7D765523-9186-4F50-B66E-607A684DDF89}|cashreg\\cashreg.csproj|solutionrelative:cashreg\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{7D765523-9186-4F50-B66E-607A684DDF89}|cashreg\\cashreg.csproj|c:\\users\\alex.alyeksyeyenko\\desktop\\cashreg\\back\\cashreg\\cashreg\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{7D765523-9186-4F50-B66E-607A684DDF89}|cashreg\\cashreg.csproj|solutionrelative:cashreg\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{7D765523-9186-4F50-B66E-607A684DDF89}|cashreg\\cashreg.csproj|c:\\users\\alex.alyeksyeyenko\\desktop\\cashreg\\back\\cashreg\\cashreg\\data\\data.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7D765523-9186-4F50-B66E-607A684DDF89}|cashreg\\cashreg.csproj|solutionrelative:cashreg\\data\\data.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7D765523-9186-4F50-B66E-607A684DDF89}|cashreg\\cashreg.csproj|c:\\users\\alex.alyeksyeyenko\\desktop\\cashreg\\back\\cashreg\\cashreg\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7D765523-9186-4F50-B66E-607A684DDF89}|cashreg\\cashreg.csproj|solutionrelative:cashreg\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7D765523-9186-4F50-B66E-607A684DDF89}|cashreg\\cashreg.csproj|c:\\users\\alex.alyeksyeyenko\\desktop\\cashreg\\back\\cashreg\\cashreg\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7D765523-9186-4F50-B66E-607A684DDF89}|cashreg\\cashreg.csproj|solutionrelative:cashreg\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7D765523-9186-4F50-B66E-607A684DDF89}|cashreg\\cashreg.csproj|c:\\users\\alex.alyeksyeyenko\\desktop\\cashreg\\back\\cashreg\\cashreg\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{7D765523-9186-4F50-B66E-607A684DDF89}|cashreg\\cashreg.csproj|solutionrelative:cashreg\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7D765523-9186-4F50-B66E-607A684DDF89}|cashreg\\cashreg.csproj|c:\\users\\alex.alyeksyeyenko\\desktop\\cashreg\\back\\cashreg\\cashreg\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{7D765523-9186-4F50-B66E-607A684DDF89}|cashreg\\cashreg.csproj|solutionrelative:cashreg\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7D765523-9186-4F50-B66E-607A684DDF89}|cashreg\\cashreg.csproj|c:\\users\\alex.alyeksyeyenko\\desktop\\cashreg\\back\\cashreg\\cashreg\\cashreg.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{7D765523-9186-4F50-B66E-607A684DDF89}|cashreg\\cashreg.csproj|solutionrelative:cashreg\\cashreg.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,11 +42,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Data.cs",
               "DocumentMoniker": "C:\\Users\\alex.alyeksyeyenko\\Desktop\\cashreg\\back\\cashreg\\cashreg\\Data\\Data.cs",
               "RelativeDocumentMoniker": "cashreg\\Data\\Data.cs",
@@ -43,22 +55,56 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-03T10:23:19.645Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "Product.cs",
               "DocumentMoniker": "C:\\Users\\alex.alyeksyeyenko\\Desktop\\cashreg\\back\\cashreg\\cashreg\\Models\\Product.cs",
               "RelativeDocumentMoniker": "cashreg\\Models\\Product.cs",
               "ToolTip": "C:\\Users\\alex.alyeksyeyenko\\Desktop\\cashreg\\back\\cashreg\\cashreg\\Models\\Product.cs",
               "RelativeToolTip": "cashreg\\Models\\Product.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-03T10:24:44.127Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\alex.alyeksyeyenko\\Desktop\\cashreg\\back\\cashreg\\cashreg\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "cashreg\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\alex.alyeksyeyenko\\Desktop\\cashreg\\back\\cashreg\\cashreg\\Properties\\launchSettings.json",
+              "RelativeToolTip": "cashreg\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAB8AAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-01-08T10:25:27.989Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "cashreg.http",
+              "DocumentMoniker": "C:\\Users\\alex.alyeksyeyenko\\Desktop\\cashreg\\back\\cashreg\\cashreg\\cashreg.http",
+              "RelativeDocumentMoniker": "cashreg\\cashreg.http",
+              "ToolTip": "C:\\Users\\alex.alyeksyeyenko\\Desktop\\cashreg\\back\\cashreg\\cashreg\\cashreg.http",
+              "RelativeToolTip": "cashreg\\cashreg.http",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2025-01-08T10:24:13.355Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "C:\\Users\\alex.alyeksyeyenko\\Desktop\\cashreg\\back\\cashreg\\cashreg\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "cashreg\\appsettings.Development.json",
+              "ToolTip": "C:\\Users\\alex.alyeksyeyenko\\Desktop\\cashreg\\back\\cashreg\\cashreg\\appsettings.Development.json",
+              "RelativeToolTip": "cashreg\\appsettings.Development.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-01-08T10:24:18.162Z"
             },
             {
               "$type": "Document",
@@ -68,33 +114,32 @@
               "RelativeDocumentMoniker": "cashreg\\Controllers\\ProductController.cs",
               "ToolTip": "C:\\Users\\alex.alyeksyeyenko\\Desktop\\cashreg\\back\\cashreg\\cashreg\\Controllers\\ProductController.cs",
               "RelativeToolTip": "cashreg\\Controllers\\ProductController.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABcAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-03T11:50:37.536Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\alex.alyeksyeyenko\\Desktop\\cashreg\\back\\cashreg\\cashreg\\appsettings.json",
               "RelativeDocumentMoniker": "cashreg\\appsettings.json",
               "ToolTip": "C:\\Users\\alex.alyeksyeyenko\\Desktop\\cashreg\\back\\cashreg\\cashreg\\appsettings.json",
               "RelativeToolTip": "cashreg\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-01-03T11:39:19.887Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-03T11:39:19.887Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\alex.alyeksyeyenko\\Desktop\\cashreg\\back\\cashreg\\cashreg\\Program.cs",
               "RelativeDocumentMoniker": "cashreg\\Program.cs",
               "ToolTip": "C:\\Users\\alex.alyeksyeyenko\\Desktop\\cashreg\\back\\cashreg\\cashreg\\Program.cs",
               "RelativeToolTip": "cashreg\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAACYAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-03T10:06:55.118Z",
               "EditorCaption": ""
