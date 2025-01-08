@@ -44,3 +44,7 @@ Cash register that allows you to count purchases that were made, store data abou
 > <h5>Packages version dont matter, just make sure to have the simillar in all packages</h4>
 
 ---
+
+
+> [!NOTE]
+> If you see this, it means the project is still in development, so it will receive updates in the future.Or I just forgot to delete it.
