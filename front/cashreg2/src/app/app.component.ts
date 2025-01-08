@@ -13,13 +13,10 @@ export class AppComponent {
 
   numbers: number[] = Array.from({ length: 10 }, (_, i) => i + 1);
 
-
-
-
-
-
   //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
+  selectedProduct: product | null = null;
+  selectedAmount: number = 1;
+  tableItems: Array<{ id: number; name: string; price: number }> = [];
 
   //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++GET PRODUCT NAME+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -41,4 +38,26 @@ export class AppComponent {
 
   //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+  addToTable() {
+    if (this.selectedProduct && this.selectedAmount) {
+      const totalPrice = this.selectedProduct.price * this.selectedAmount;
+      const existingItem = this.tableItems.find(
+        (item) => item.id === this.selectedProduct!.id
+      );
+
+      if (existingItem) {
+        existingItem.price += totalPrice;
+      } else {
+        this.tableItems.push({
+          id: this.selectedProduct.id,
+          name: this.selectedProduct.name,
+          price: totalPrice,
+        });
+      }
+    }
+  }
+
+  removeFromTable(index: number) {
+    this.tableItems.splice(index, 1);
+  }
 }

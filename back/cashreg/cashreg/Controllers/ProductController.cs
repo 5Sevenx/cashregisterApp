@@ -31,15 +31,8 @@ namespace cashreg.Controllers
             return Ok(product);
         }
 
-        [HttpPost("create")]
 
-        public async Task<ActionResult> Create(Product product)
-        {
-            if (string.IsNullOrEmpty(product.name))
-            {
-                return BadRequest("")
-            }
-        }
+     
 
     }
 }

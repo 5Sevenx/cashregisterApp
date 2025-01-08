@@ -19,6 +19,29 @@
        <!--++++++++-->
     </select>
 
-    <button class="btn btn-primary btn-lg rounded-pill shadow-sm px-4 mt-5">Here</button>
+    <button class="btn btn-primary btn-lg rounded-pill shadow-sm px-4 mt-5" (click)="addToTable()">Here</button>
     <hr style="border-top: 1px solid black; width: 100%;">
 </div>
+
+
+<!--  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++PRODUCT PART++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
+<div class="d-flex flex-column align-items-center">
+  <h1>Products</h1>
+
+  <table class="table table-bordered mt-4" style="width: 75%;">
+    <thead class="table-light">
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Total Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of tableItems; let i = index">
+        <td>{{ item.name }}</td>
+        <td>{{ item.price}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
