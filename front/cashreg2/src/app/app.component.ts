@@ -10,16 +10,16 @@ import { ProductService } from './services/product.service';
 export class AppComponent {
 
   //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++VARIABLE FOR NUMS+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
   numbers: number[] = Array.from({ length: 10 }, (_, i) => i + 1);
-
   //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-  selectedProduct: product | null = null;
-  selectedAmount: number = 1;
-  tableItems: Array<{ id: number; name: string; price: number }> = [];
 
   //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++GET PRODUCT NAME+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+  selectedProduct: product | null = null;
+  selectedAmount = 1;
+  tableItems: Array<{ id: number; name: string; price: number, amount?:number }> = [];
+
+  //Pre-load
   ngOnInit(): void {
     this.getproducts();
   }
@@ -28,6 +28,7 @@ export class AppComponent {
   constructor (private productService:ProductService){
   }
 
+  //show products method
   getproducts(){
     this.productService.getall().subscribe((data) => {
       console.log(data);
@@ -38,26 +39,34 @@ export class AppComponent {
 
   //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-  addToTable() {
-    if (this.selectedProduct && this.selectedAmount) {
-      const totalPrice = this.selectedProduct.price * this.selectedAmount;
-      const existingItem = this.tableItems.find(
-        (item) => item.id === this.selectedProduct!.id
-      );
+  //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++PRODUCT TABLE++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-      if (existingItem) {
-        existingItem.price += totalPrice;
-      } else {
-        this.tableItems.push({
-          id: this.selectedProduct.id,
-          name: this.selectedProduct.name,
-          price: totalPrice,
-        });
-      }
+  //Add to table logic
+  addToTable() {
+    if (this.selectedProduct) {
+      const price = this.selectedProduct.price;
+      this.tableItems.push({
+        id: this.tableItems.length + 1,
+        name: this.selectedProduct.name,
+        amount: this.selectedAmount,
+        price: price * this.selectedAmount,
+      });
+    } else {
+      alert('Select product');
     }
   }
 
-  removeFromTable(index: number) {
+  //Remove items
+  removeItem(index: number) {
     this.tableItems.splice(index, 1);
   }
+
+  //Total price calculating
+  get totalPrice(): number {
+    return this.tableItems.reduce((sum, item) => sum + item.price, 0);
+  }
 }
+  //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
