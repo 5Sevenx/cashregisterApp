@@ -21,15 +21,15 @@
   },
   {
     "ContainingType": "cashreg.Controllers.ProductController",
-    "Method": "GetPerId",
-    "RelativePath": "api/Product/{id}",
-    "HttpMethod": "GET",
+    "Method": "CreateTicketWithProducts",
+    "RelativePath": "api/Product/create-ticket",
+    "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "id",
-        "Type": "System.Int32",
+        "Name": "ticketDto",
+        "Type": "cashreg.Models.DTOS.CreateTicketDTO",
         "IsRequired": true
       }
     ],

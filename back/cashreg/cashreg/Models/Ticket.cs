@@ -2,7 +2,7 @@
 
 namespace cashreg.Models
 {
-    [Table("Total")]
+    [Table("Ticket")]
     public class Ticket
     {
         
@@ -13,6 +13,8 @@ namespace cashreg.Models
         public DateTime Date { get; set; }
 
         public int Amount { get; set; }
+
+        public List<TotalProductLink> TotalProductLinks { get; set; }
 
     }
 }

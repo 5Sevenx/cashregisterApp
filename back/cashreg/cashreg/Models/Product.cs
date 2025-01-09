@@ -14,6 +14,8 @@ namespace cashreg.Models
 
         public double price { get; set; }
 
+        public List<TotalProductLink> TotalProductLinks { get; set; }
+
     }
     //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++MAIN TABLE+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
