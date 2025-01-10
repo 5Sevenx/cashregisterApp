@@ -7,9 +7,12 @@ namespace cashreg.Data
     {
         public DataContext(DbContextOptions<DataContext> options) : base(options) { }
 
+        //+++++++++++++++++++++++++++++++++++++++++++++++++++TABLES+++++++++++++++++++++++++++++++++++++++++++++++++++
         public DbSet<Product> Products { get; set; }
         public DbSet<Ticket> Tickets { get; set; }
         public DbSet<TotalProductLink> TotalProductLinks { get; set; }
+        //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

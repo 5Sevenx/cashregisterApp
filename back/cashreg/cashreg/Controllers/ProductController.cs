@@ -35,25 +35,33 @@ namespace cashreg.Controllers
             if (ticketDto.ProductList == null || !ticketDto.ProductList.Any())
                 return BadRequest("No products provided in the request.");
 
-            // Fetch products based on provided objects in ProductLias
+            // Fetch products based on provided objects in product list
             var productIds = ticketDto.ProductList.Select(p => p.IdProduct).ToList();
             var products = await _cont.Products
                 .Where(p => productIds.Contains(p.ID))
                 .ToListAsync();
+            
 
+            //Validation
             if (!products.Any())
                 return BadRequest("No matching products found in the database.");
 
+
             // Calculate total amount and price
-            int totalAmount = products.Count; // Assuming 1 quantity per product
-            double totalPrice = products.Sum(p => p.price);
+            int totalAmount = ticketDto.ProductList.Sum(p => p.Amount);
+            double totalPrice = ticketDto.ProductList.Sum(product =>
+            {
+                var matchingProduct = products.FirstOrDefault(p => p.ID == product.IdProduct);
+                return matchingProduct != null ? matchingProduct.price * product.Amount : 0;
+            });
+
 
             // Build TotalProductLinks
             var totalProductLinks = ticketDto.ProductList.Select(product => new TotalProductLink
             {
                 Product_ID = product.IdProduct,
-                Amount = product.Amount, // Assuming default amount as 1
-                Price = products.FirstOrDefault(item=> item.ID == product.IdProduct).price
+                Amount = product.Amount, 
+                Price = products.FirstOrDefault(item=> item.ID == product.IdProduct)?.price ?? 0
             }).ToList();
 
             // Create the Ticket object

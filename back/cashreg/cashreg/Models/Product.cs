@@ -14,6 +14,7 @@ namespace cashreg.Models
 
         public double price { get; set; }
 
+        //contect with TotalProductLink table
         public List<TotalProductLink> TotalProductLinks { get; set; }
 
     }

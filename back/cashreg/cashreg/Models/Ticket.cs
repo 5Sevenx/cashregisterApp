@@ -14,6 +14,7 @@ namespace cashreg.Models
 
         public int Amount { get; set; }
 
+        //contect with TotalProductLink table
         public List<TotalProductLink> TotalProductLinks { get; set; }
 
     }
