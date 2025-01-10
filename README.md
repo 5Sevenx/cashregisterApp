@@ -1,5 +1,7 @@
 # About project
 Cash register that allows you to count purchases that were made, store data about them, and use all the data provided to create some sort of dailies showing how much cash was earned that day.
+![image](https://github.com/user-attachments/assets/405a437c-6483-40aa-8b14-36a9f570abf8)
+
 
 ## Required 
   1. **Backend**
@@ -45,6 +47,3 @@ Cash register that allows you to count purchases that were made, store data abou
 
 ---
 
-
-> [!NOTE]
-> If you see this, it means the project is still in development, so it will receive updates in the future.Or I just forgot to delete it.
