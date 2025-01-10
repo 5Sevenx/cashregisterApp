@@ -21,7 +21,15 @@ export class ProductService{
   getall(){
     return this.http.get<product[]>(`${this.baseUrl}Product`)
   }
+
+
+  //Add prodcuts method
+  addProducts(payload: { productList: Array<{ idProduct: number; amount: number }> }) {
+    return this.http.post(`${this.baseUrl}Product/create-ticket`, payload);
+  }
+
   //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 
 
 }

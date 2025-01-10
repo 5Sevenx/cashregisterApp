@@ -65,8 +65,31 @@ export class AppComponent {
   get totalPrice(): number {
     return this.tableItems.reduce((sum, item) => sum + item.price, 0);
   }
-}
+
   //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+  //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++INSERT BUTTON++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+  sendTableProducts() {
+    const payload = {
+      productList: this.tableItems.map(item => ({
+        idProduct: item.id,
+        amount: item.amount || 1
+      }))
+    };
 
+    this.productService.addProducts(payload).subscribe(
+      response => {
+        console.log('Products sent successfully:', response);
+        alert('Products sent successfully!');
+        this.tableItems = [];
+      },
+      error => {
+        console.error('Error sending products:', error);
+        alert('Failed to send products');
 
+      }
+    );
+  }
+  }
+
+  //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
