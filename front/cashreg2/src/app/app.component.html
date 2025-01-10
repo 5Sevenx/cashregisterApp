@@ -23,7 +23,8 @@
       class="form-select shadow-sm"
       id="amountSelect"
       style="width: 100%; font-size: 1rem; padding: 0.75rem;"
-      [(ngModel)]="selectedAmount">
+      [(ngModel)]="selectedAmount"
+      type="number">
       <option *ngFor="let number of numbers" [value]="number">{{ number }}</option>
     </select>
     <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->

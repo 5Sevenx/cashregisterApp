@@ -17,7 +17,7 @@ export class AppComponent {
 
   selectedProduct: product | null = null;
   selectedAmount = 1;
-  tableItems: Array<{ id: number; name: string; price: number, amount?:number }> = [];
+  tableItems: Array<{ id: number; name: string; price: number, amount:number }> = [];
 
   //Pre-load
   ngOnInit(): void {
@@ -44,17 +44,29 @@ export class AppComponent {
   //Add to table logic
   addToTable() {
     if (this.selectedProduct) {
-      const price = this.selectedProduct.price;
-      this.tableItems.push({
-        id: this.tableItems.length + 1,
-        name: this.selectedProduct.name,
-        amount: this.selectedAmount,
-        price: price * this.selectedAmount,
-      });
+      //if the product already exists in the table
+      const existingProduct = this.tableItems.find(item => item.name === this.selectedProduct?.name);
+
+      if (existingProduct) {
+        // If the product exists,update the amount by adding the selected amount
+        existingProduct.amount +=  Number(this.selectedAmount) ;
+        existingProduct.price = existingProduct.amount * this.selectedProduct.price;
+      } else {
+
+        const price = this.selectedProduct.price;
+        this.tableItems.push({
+          id: this.tableItems.length + 1,
+          name: this.selectedProduct.name,
+          amount: this.selectedAmount,
+          price: price * this.selectedAmount,
+        });
+      }
     } else {
       alert('Select product');
     }
   }
+
+
 
   //Remove items
   removeItem(index: number) {
