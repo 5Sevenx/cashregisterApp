@@ -6,6 +6,8 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { CommonModule, CurrencyPipe } from '@angular/common';
 import { product } from '../interface/product.interface';
+import { HttpClient } from '@angular/common/http';
+import { ProductService } from '../services/product.service';
 
 @Component({
   selector: 'main',
@@ -22,6 +24,7 @@ export class TicketComponent  implements OnInit {
   ngOnInit() {
     this.gettotal();
     this.gettickets();
+    this.getproducts();
   }
 
   //Tables
@@ -32,7 +35,7 @@ export class TicketComponent  implements OnInit {
 
 
   //include totalticketservice
-  constructor(private TotalTicketService:TotalTicketService) { }
+  constructor(private TotalTicketService:TotalTicketService, private http:HttpClient, private ProductService:ProductService) { }
 
   //include interface arrays
   private products:product[] = [];
@@ -60,11 +63,44 @@ export class TicketComponent  implements OnInit {
       this.tableItemsTicket = d;
     })
   }
+
+  getproducts(){
+    this.ProductService.getall().subscribe((d) => {
+      console.log(d);
+      this.products = d;
+    })
+  }
+
   //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
   ViewTotal(totalid: number) {
+    this.selectedTicket = totalid;
+
+    //clear table
+    this.tabletoadd = [];
+
+    //select items wich is equal to totalid
+    const selectedTotals = this.tableItemsTotal.filter(item => item.total_Id === totalid);
 
 
+    selectedTotals.forEach(totalItem => {
+
+      const productName = this.products.find(product => product.id === totalItem.product_ID)?.name;
+
+      // add to table
+      if (productName) {
+
+        this.tabletoadd.push({
+          id: totalItem.product_ID,
+          name: productName,
+          price: totalItem.price,
+          amount: totalItem.amount,
+        });
+      }
+    });
+
+    console.log('Updated tabletoadd:', this.tabletoadd);
   }
+
 
 }

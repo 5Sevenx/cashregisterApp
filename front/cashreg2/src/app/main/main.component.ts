@@ -66,8 +66,8 @@ export class MainComponent  implements OnInit {
         this.tableItems.push({
           id: this.tableItems.length + 1,
           name: this.selectedProduct.name,
-          amount: this.selectedAmount,
-          price: price * this.selectedAmount,
+          amount: Number(this.selectedAmount),
+          price: price * Number(this.selectedAmount),
         });
       }
     } else {
