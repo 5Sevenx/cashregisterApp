@@ -18,7 +18,9 @@ namespace cashreg.Data
         {
             // Defining the many-to-many relationship
             modelBuilder.Entity<TotalProductLink>()
-                .HasKey(tpl => new { tpl.Product_ID, tpl.Total_Id });
+                .HasKey(tpl => new { tpl.Product_ID, tpl.Total_Id })
+                
+                ;
 
             modelBuilder.Entity<TotalProductLink>()
                 .HasOne(tpl => tpl.Product)
@@ -29,6 +31,7 @@ namespace cashreg.Data
                 .HasOne(tpl => tpl.Ticket)
                 .WithMany(t => t.TotalProductLinks)
                 .HasForeignKey(tpl => tpl.Total_Id);
+
         }
     }
 }

@@ -28,6 +28,20 @@ namespace cashreg.Controllers
             return Ok(product);
         }
         //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+        [HttpGet("ticket")]
+        public async Task<ActionResult<List<Ticket>>> GetAllTickets()
+        {
+            var ticket = await _cont.Tickets.ToListAsync();
+            return Ok(ticket);
+        }
+
+        [HttpGet("total")]
+        public async Task<ActionResult<List<TotalProductLink>>> GetAllTotal()
+        {
+            var total = await _cont.TotalProductLinks.ToListAsync();
+            return Ok(total);
+        }
+
         [HttpPost("create-ticket")]
         public async Task<IActionResult> CreateTicketWithProducts([FromBody] CreateTicketDTO ticketDto)
         {
@@ -41,11 +55,6 @@ namespace cashreg.Controllers
                 .Where(p => productIds.Contains(p.ID))
                 .ToListAsync();
             
-
-            //Validation
-            if (!products.Any())
-                return BadRequest("No matching products found in the database.");
-
 
             // Calculate total amount and price
             int totalAmount = ticketDto.ProductList.Sum(p => p.Amount);
@@ -68,7 +77,6 @@ namespace cashreg.Controllers
             var ticket = new Ticket
             {
                 Date = DateTime.Now,
-                Amount = totalAmount,
                 Price = totalPrice,
                 TotalProductLinks = totalProductLinks
             };
@@ -83,7 +91,6 @@ namespace cashreg.Controllers
                 Id = ticket.ID,
                 Price = ticket.Price,
                 Date = ticket.Date,
-                Amount = ticket.Amount,
                 TotalProductLinks = totalProductLinks.Select(link => new TotalProductLinkDto
                 {
                     ProductId = link.Product_ID,

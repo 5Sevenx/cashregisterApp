@@ -1,0 +1,62 @@
+<div class="d-flex flex-column align-items-center mt-4">
+  <h1 class="text-uppercase text-dark fw-bold mb-3" style="font-family: 'Arial', sans-serif; font-size: 2.5rem;">Tickets</h1>
+  <hr style="border-top: 2px solid #0000005c; width: 100%;">
+</div>
+
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++TOTAL TABLE++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<div class="d-flex flex-column align-items-center my-5">
+  <table class="table table-hover table-striped shadow rounded" style="width: 95%; background: #f9f9f9;">
+    <thead class="table-light text-center" style="font-size: 1.2rem; font-weight: 600;">
+      <tr>
+        <th scope="col" class="col-2">Ticket id</th>
+        <th scope="col" class="col-2">Price</th>
+        <th scope="col" class="col-2">Date</th>
+        <th scope="col" class="col-2">Actions</th>
+      </tr>
+    </thead>
+    <tbody class="text-center align-middle">
+      <tr *ngFor="let arr of tableItemsTicket; let i = index" style="font-size: 1.1rem;">
+        <td>{{ arr.id }}</td>
+        <td>{{ arr.price }}</td>
+        <td>{{ arr.date }}</td>
+        <td>
+          <button class="btn btn-danger btn-sm rounded-pill shadow-sm px-4"
+          (click)="ViewTotal(arr.id)"
+          >
+            View
+
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+  <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+  <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++PRODUCTS TABLE++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+  <div class="d-flex flex-column align-items-center mt-4">
+    <h1 class="text-uppercase text-dark fw-bold mb-3" style="font-family: 'Arial', sans-serif; font-size: 2.5rem;">Tickets</h1>
+    <hr style="border-top: 2px solid #0000005c; width: 100%;">
+  </div>
+
+  <div class="d-flex flex-column align-items-center my-5">
+    <table class="table table-hover table-striped shadow rounded" style="width: 95%; background: #f9f9f9;">
+      <thead class="table-light text-center" style="font-size: 1.2rem; font-weight: 600;">
+        <tr>
+          <th scope="col" class="col-2">Id product</th>
+          <th scope="col" class="col-2">Product name</th>
+          <th scope="col" class="col-2">Price</th>
+          <th scope="col" class="col-2">Amount</th>
+        </tr>
+      </thead>
+      <tbody class="text-center align-middle">
+        <tr *ngFor="let arr of tabletoadd; let i = index" style="font-size: 1.1rem;">
+          <td>{{ arr.id || '-' }}</td>
+          <td>{{ arr.name || '-' }}</td>
+          <td>{{ arr.price || '-' }}</td>
+          <td>{{ arr.amount || '-' }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
