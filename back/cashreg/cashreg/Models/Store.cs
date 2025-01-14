@@ -11,6 +11,6 @@ namespace cashreg.Models
         public string Name { get; set; }
 
         //contect with TotalProductLink table
-        public List<Ticket> Tickets{ get; set; }
+        public virtual ICollection<Ticket> Tickets{ get; set; }
     }
 }

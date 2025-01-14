@@ -4,6 +4,7 @@ import { ProductService } from '../services/product.service';
 import { CurrencyPipe, CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { Store } from '../interface/store.interface';
 @Component({
   selector: 'main',
   templateUrl: './main.component.html',
@@ -23,14 +24,17 @@ export class MainComponent  implements OnInit {
   //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++GET PRODUCT NAME++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
   selectedProduct: product | null = null;
+  selectedStore:Store | null = null;
   selectedAmount = 1;
   tableItems: Array<{ id: number; name: string; price: number, amount:number }> = [];
 
   //Pre-load
   ngOnInit(): void {
     this.getproducts();
+    this.getstores();
   }
 
+  stores:Store [] = [];
   products:product[] = [];
   constructor (private productService:ProductService,
     private routerModule: RouterModule
@@ -44,6 +48,13 @@ export class MainComponent  implements OnInit {
       this.products = d;
     }
     )
+  }
+
+  getstores(){
+    this.productService.getstore().subscribe((d)=> {
+      console.log(d);
+      this.stores =d
+    })
   }
 
   //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -127,5 +138,7 @@ export class MainComponent  implements OnInit {
     this.tableItems[amount].price = this.tableItems[amount].amount * (this.products.find(p => p.name === this.tableItems[amount].name)?.price || 0)
   }
   //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
 
 }
