@@ -89,7 +89,7 @@ export class MainComponent  implements OnInit {
 
   //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-  //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++INSERT BUTTON++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+  //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++INSERT BUTTON++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
   sendTableProducts() {
     const payload = {
       productList: this.tableItems.map(item => ({
@@ -111,5 +111,21 @@ export class MainComponent  implements OnInit {
       }
     );
   }
+  //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+  //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++INCREMENT BUTTNOS+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+  decrementAmount(amount : number){
+     //prevent negative or zero
+    if(this.tableItems[amount].amount > 1){
+        this.tableItems[amount].amount -= 1;
+        this.tableItems[amount].price = this.tableItems[amount].amount * (this.products.find(p => p.name === this.tableItems[amount].name)?.price || 0)
+    }
+  }
+
+  incrementAmount(amount : number){
+    this.tableItems[amount].amount += 1;
+    this.tableItems[amount].price = this.tableItems[amount].amount * (this.products.find(p => p.name === this.tableItems[amount].name)?.price || 0)
+  }
+  //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 }

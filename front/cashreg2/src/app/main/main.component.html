@@ -58,7 +58,23 @@
     <tbody class="text-center align-middle">
       <tr *ngFor="let item of tableItems; let i = index" class="table-light" style="font-size: 1.1rem;">
         <td class="fw-semibold">{{ item.name }}</td>
-        <td>{{ item.amount }}</td>
+        <td>
+          <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++INCREMENT BUTTONS++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+          <div class="d-flex justify-content-center align-items-center">
+            <button
+              class="btn btn-secondary btn-sm rounded-pill shadow-sm px-2"
+              (click)="decrementAmount(i)">
+              -
+            </button>
+            <span class="mx-2">{{ item.amount }}</span>
+            <button
+              class="btn btn-secondary btn-sm rounded-pill shadow-sm px-2"
+              (click)="incrementAmount(i)">
+              +
+            </button>
+          </div>
+          <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+        </td>
         <td class="text-success fw-bold">{{ item.price | currency:'USD':'symbol':'1.2-2' }}</td>
         <td>
           <button
@@ -76,6 +92,7 @@
       </tr>
       <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
     </tbody>
+
   </table>
 
   <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++SUBMIT BUTTON+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
@@ -88,8 +105,6 @@
     </button>
   </div>
   <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
-
-
 
 <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++TICKETS+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 <div class="d-flex flex-column align-items-center mt-4">
