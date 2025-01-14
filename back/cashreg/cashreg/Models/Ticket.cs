@@ -12,7 +12,9 @@ namespace cashreg.Models
 
         public DateTime Date { get; set; }
 
-       // public int Amount { get; set; }
+        public int ID_Store { get; set; }
+
+        public Store Store { get; set; }
 
         //contect with TotalProductLink table
         public List<TotalProductLink> TotalProductLinks { get; set; }

@@ -3,8 +3,8 @@
     public class CreateTicketDTO
     {
         public List<ProductAmount> ProductList { get; set; }
-        
-        
+        public int ID_Store { get; set; }
+
     }
 
     public class ProductAmount

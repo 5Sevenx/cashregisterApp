@@ -5,7 +5,8 @@
         public int Id { get; set; }
         public double Price { get; set; }
         public DateTime Date { get; set; }
-        public int Amount { get; set; }
+        public StoreDTO Store { get; set; }
+     
         public List<TotalProductLinkDto> TotalProductLinks { get; set; }
     }
 

@@ -7,14 +7,6 @@
       "RelativeMoniker": "D:0:0:{7D765523-9186-4F50-B66E-607A684DDF89}|cashreg\\cashreg.csproj|solutionrelative:cashreg\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7D765523-9186-4F50-B66E-607A684DDF89}|cashreg\\cashreg.csproj|c:\\users\\alex.alyeksyeyenko\\desktop\\cashreg\\back\\cashreg\\cashreg\\models\\total.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7D765523-9186-4F50-B66E-607A684DDF89}|cashreg\\cashreg.csproj|solutionrelative:cashreg\\models\\total.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7D765523-9186-4F50-B66E-607A684DDF89}|cashreg\\cashreg.csproj|c:\\users\\alex.alyeksyeyenko\\desktop\\cashreg\\back\\cashreg\\cashreg\\models\\ticket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7D765523-9186-4F50-B66E-607A684DDF89}|cashreg\\cashreg.csproj|solutionrelative:cashreg\\models\\ticket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{7D765523-9186-4F50-B66E-607A684DDF89}|cashreg\\cashreg.csproj|c:\\users\\alex.alyeksyeyenko\\desktop\\cashreg\\back\\cashreg\\cashreg\\models\\dtos\\createticketdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7D765523-9186-4F50-B66E-607A684DDF89}|cashreg\\cashreg.csproj|solutionrelative:cashreg\\models\\dtos\\createticketdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -23,12 +15,36 @@
       "RelativeMoniker": "D:0:0:{7D765523-9186-4F50-B66E-607A684DDF89}|cashreg\\cashreg.csproj|solutionrelative:cashreg\\models\\dtos\\ticketdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7D765523-9186-4F50-B66E-607A684DDF89}|cashreg\\cashreg.csproj|c:\\users\\alex.alyeksyeyenko\\desktop\\cashreg\\back\\cashreg\\cashreg\\data\\data.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7D765523-9186-4F50-B66E-607A684DDF89}|cashreg\\cashreg.csproj|solutionrelative:cashreg\\data\\data.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7D765523-9186-4F50-B66E-607A684DDF89}|cashreg\\cashreg.csproj|c:\\users\\alex.alyeksyeyenko\\desktop\\cashreg\\back\\cashreg\\cashreg\\models\\store.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7D765523-9186-4F50-B66E-607A684DDF89}|cashreg\\cashreg.csproj|solutionrelative:cashreg\\models\\store.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7D765523-9186-4F50-B66E-607A684DDF89}|cashreg\\cashreg.csproj|c:\\users\\alex.alyeksyeyenko\\desktop\\cashreg\\back\\cashreg\\cashreg\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7D765523-9186-4F50-B66E-607A684DDF89}|cashreg\\cashreg.csproj|solutionrelative:cashreg\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7D765523-9186-4F50-B66E-607A684DDF89}|cashreg\\cashreg.csproj|c:\\users\\alex.alyeksyeyenko\\desktop\\cashreg\\back\\cashreg\\cashreg\\models\\ticket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7D765523-9186-4F50-B66E-607A684DDF89}|cashreg\\cashreg.csproj|solutionrelative:cashreg\\models\\ticket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7D765523-9186-4F50-B66E-607A684DDF89}|cashreg\\cashreg.csproj|c:\\users\\alex.alyeksyeyenko\\desktop\\cashreg\\back\\cashreg\\cashreg\\models\\total.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7D765523-9186-4F50-B66E-607A684DDF89}|cashreg\\cashreg.csproj|solutionrelative:cashreg\\models\\total.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7D765523-9186-4F50-B66E-607A684DDF89}|cashreg\\cashreg.csproj|c:\\users\\alex.alyeksyeyenko\\desktop\\cashreg\\back\\cashreg\\cashreg\\data\\data.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7D765523-9186-4F50-B66E-607A684DDF89}|cashreg\\cashreg.csproj|solutionrelative:cashreg\\data\\data.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7D765523-9186-4F50-B66E-607A684DDF89}|cashreg\\cashreg.csproj|c:\\users\\alex.alyeksyeyenko\\desktop\\cashreg\\back\\cashreg\\cashreg\\models\\dtos\\storedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7D765523-9186-4F50-B66E-607A684DDF89}|cashreg\\cashreg.csproj|solutionrelative:cashreg\\models\\dtos\\storedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7D765523-9186-4F50-B66E-607A684DDF89}|cashreg\\cashreg.csproj|c:\\users\\alex.alyeksyeyenko\\desktop\\cashreg\\back\\cashreg\\cashreg\\models\\dtos\\productsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7D765523-9186-4F50-B66E-607A684DDF89}|cashreg\\cashreg.csproj|solutionrelative:cashreg\\models\\dtos\\productsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7D765523-9186-4F50-B66E-607A684DDF89}|cashreg\\cashreg.csproj|c:\\users\\alex.alyeksyeyenko\\desktop\\cashreg\\back\\cashreg\\cashreg\\cashreg.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{7D765523-9186-4F50-B66E-607A684DDF89}|cashreg\\cashreg.csproj|solutionrelative:cashreg\\cashreg.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,81 +54,74 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "Data.cs",
               "DocumentMoniker": "C:\\Users\\alex.alyeksyeyenko\\Desktop\\cashreg\\back\\cashreg\\cashreg\\Data\\Data.cs",
               "RelativeDocumentMoniker": "cashreg\\Data\\Data.cs",
               "ToolTip": "C:\\Users\\alex.alyeksyeyenko\\Desktop\\cashreg\\back\\cashreg\\cashreg\\Data\\Data.cs",
               "RelativeToolTip": "cashreg\\Data\\Data.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAxwBsAAAA1AAAAAAAAAA==",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAgwC4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-03T10:23:19.645Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 4,
               "Title": "Product.cs",
               "DocumentMoniker": "C:\\Users\\alex.alyeksyeyenko\\Desktop\\cashreg\\back\\cashreg\\cashreg\\Models\\Product.cs",
               "RelativeDocumentMoniker": "cashreg\\Models\\Product.cs",
               "ToolTip": "C:\\Users\\alex.alyeksyeyenko\\Desktop\\cashreg\\back\\cashreg\\cashreg\\Models\\Product.cs",
               "RelativeToolTip": "cashreg\\Models\\Product.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAtAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAsAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-03T10:24:44.127Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Total.cs",
-              "DocumentMoniker": "C:\\Users\\alex.alyeksyeyenko\\Desktop\\cashreg\\back\\cashreg\\cashreg\\Models\\Total.cs",
-              "RelativeDocumentMoniker": "cashreg\\Models\\Total.cs",
-              "ToolTip": "C:\\Users\\alex.alyeksyeyenko\\Desktop\\cashreg\\back\\cashreg\\cashreg\\Models\\Total.cs",
-              "RelativeToolTip": "cashreg\\Models\\Total.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-09T15:34:28.551Z"
+              "DocumentIndex": 10,
+              "Title": "cashreg",
+              "DocumentMoniker": "C:\\Users\\alex.alyeksyeyenko\\Desktop\\cashreg\\back\\cashreg\\cashreg\\cashreg.csproj",
+              "RelativeDocumentMoniker": "cashreg\\cashreg.csproj",
+              "ToolTip": "C:\\Users\\alex.alyeksyeyenko\\Desktop\\cashreg\\back\\cashreg\\cashreg\\cashreg.csproj",
+              "RelativeToolTip": "cashreg\\cashreg.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-01-14T15:31:46.459Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Ticket.cs",
-              "DocumentMoniker": "C:\\Users\\alex.alyeksyeyenko\\Desktop\\cashreg\\back\\cashreg\\cashreg\\Models\\Ticket.cs",
-              "RelativeDocumentMoniker": "cashreg\\Models\\Ticket.cs",
-              "ToolTip": "C:\\Users\\alex.alyeksyeyenko\\Desktop\\cashreg\\back\\cashreg\\cashreg\\Models\\Ticket.cs",
-              "RelativeToolTip": "cashreg\\Models\\Ticket.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAJAAAAAAAAAA==",
+              "DocumentIndex": 9,
+              "Title": "ProductsDTO.cs",
+              "DocumentMoniker": "C:\\Users\\alex.alyeksyeyenko\\Desktop\\cashreg\\back\\cashreg\\cashreg\\Models\\DTOS\\ProductsDTO.cs",
+              "RelativeDocumentMoniker": "cashreg\\Models\\DTOS\\ProductsDTO.cs",
+              "ToolTip": "C:\\Users\\alex.alyeksyeyenko\\Desktop\\cashreg\\back\\cashreg\\cashreg\\Models\\DTOS\\ProductsDTO.cs",
+              "RelativeToolTip": "cashreg\\Models\\DTOS\\ProductsDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-09T15:34:27.038Z"
+              "WhenOpened": "2025-01-14T15:26:12.57Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "TicketDto.cs",
-              "DocumentMoniker": "C:\\Users\\alex.alyeksyeyenko\\Desktop\\cashreg\\back\\cashreg\\cashreg\\Models\\DTOS\\TicketDto.cs",
-              "RelativeDocumentMoniker": "cashreg\\Models\\DTOS\\TicketDto.cs",
-              "ToolTip": "C:\\Users\\alex.alyeksyeyenko\\Desktop\\cashreg\\back\\cashreg\\cashreg\\Models\\DTOS\\TicketDto.cs",
-              "RelativeToolTip": "cashreg\\Models\\DTOS\\TicketDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAnAAAAAAAAAA==",
+              "DocumentIndex": 8,
+              "Title": "StoreDTO.cs",
+              "DocumentMoniker": "C:\\Users\\alex.alyeksyeyenko\\Desktop\\cashreg\\back\\cashreg\\cashreg\\Models\\DTOS\\StoreDTO.cs",
+              "RelativeDocumentMoniker": "cashreg\\Models\\DTOS\\StoreDTO.cs",
+              "ToolTip": "C:\\Users\\alex.alyeksyeyenko\\Desktop\\cashreg\\back\\cashreg\\cashreg\\Models\\DTOS\\StoreDTO.cs",
+              "RelativeToolTip": "cashreg\\Models\\DTOS\\StoreDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-09T15:03:49.649Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "CreateTicketDTO.cs",
-              "DocumentMoniker": "C:\\Users\\alex.alyeksyeyenko\\Desktop\\cashreg\\back\\cashreg\\cashreg\\Models\\DTOS\\CreateTicketDTO.cs",
-              "RelativeDocumentMoniker": "cashreg\\Models\\DTOS\\CreateTicketDTO.cs",
-              "ToolTip": "C:\\Users\\alex.alyeksyeyenko\\Desktop\\cashreg\\back\\cashreg\\cashreg\\Models\\DTOS\\CreateTicketDTO.cs",
-              "RelativeToolTip": "cashreg\\Models\\DTOS\\CreateTicketDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-09T14:59:20.431Z"
+              "WhenOpened": "2025-01-14T13:13:04.934Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -120,11 +129,76 @@
               "Title": "ProductController.cs",
               "DocumentMoniker": "C:\\Users\\alex.alyeksyeyenko\\Desktop\\cashreg\\back\\cashreg\\cashreg\\Controllers\\ProductController.cs",
               "RelativeDocumentMoniker": "cashreg\\Controllers\\ProductController.cs",
-              "ToolTip": "C:\\Users\\alex.alyeksyeyenko\\Desktop\\cashreg\\back\\cashreg\\cashreg\\Controllers\\ProductController.cs",
-              "RelativeToolTip": "cashreg\\Controllers\\ProductController.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAgwEkAAAAYAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\alex.alyeksyeyenko\\Desktop\\cashreg\\back\\cashreg\\cashreg\\Controllers\\ProductController.cs*",
+              "RelativeToolTip": "cashreg\\Controllers\\ProductController.cs*",
+              "ViewState": "AgIAACMAAAAAAAAAAAAgwEQAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-03T11:50:37.536Z",
+              "WhenOpened": "2025-01-14T13:09:32.373Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Store.cs",
+              "DocumentMoniker": "C:\\Users\\alex.alyeksyeyenko\\Desktop\\cashreg\\back\\cashreg\\cashreg\\Models\\Store.cs",
+              "RelativeDocumentMoniker": "cashreg\\Models\\Store.cs",
+              "ToolTip": "C:\\Users\\alex.alyeksyeyenko\\Desktop\\cashreg\\back\\cashreg\\cashreg\\Models\\Store.cs",
+              "RelativeToolTip": "cashreg\\Models\\Store.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-14T10:23:17.628Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Total.cs",
+              "DocumentMoniker": "C:\\Users\\alex.alyeksyeyenko\\Desktop\\cashreg\\back\\cashreg\\cashreg\\Models\\Total.cs",
+              "RelativeDocumentMoniker": "cashreg\\Models\\Total.cs",
+              "ToolTip": "C:\\Users\\alex.alyeksyeyenko\\Desktop\\cashreg\\back\\cashreg\\cashreg\\Models\\Total.cs",
+              "RelativeToolTip": "cashreg\\Models\\Total.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-09T15:34:28.551Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Ticket.cs",
+              "DocumentMoniker": "C:\\Users\\alex.alyeksyeyenko\\Desktop\\cashreg\\back\\cashreg\\cashreg\\Models\\Ticket.cs",
+              "RelativeDocumentMoniker": "cashreg\\Models\\Ticket.cs",
+              "ToolTip": "C:\\Users\\alex.alyeksyeyenko\\Desktop\\cashreg\\back\\cashreg\\cashreg\\Models\\Ticket.cs",
+              "RelativeToolTip": "cashreg\\Models\\Ticket.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-09T15:34:27.038Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "TicketDto.cs",
+              "DocumentMoniker": "C:\\Users\\alex.alyeksyeyenko\\Desktop\\cashreg\\back\\cashreg\\cashreg\\Models\\DTOS\\TicketDto.cs",
+              "RelativeDocumentMoniker": "cashreg\\Models\\DTOS\\TicketDto.cs",
+              "ToolTip": "C:\\Users\\alex.alyeksyeyenko\\Desktop\\cashreg\\back\\cashreg\\cashreg\\Models\\DTOS\\TicketDto.cs*",
+              "RelativeToolTip": "cashreg\\Models\\DTOS\\TicketDto.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-09T15:03:49.649Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CreateTicketDTO.cs",
+              "DocumentMoniker": "C:\\Users\\alex.alyeksyeyenko\\Desktop\\cashreg\\back\\cashreg\\cashreg\\Models\\DTOS\\CreateTicketDTO.cs",
+              "RelativeDocumentMoniker": "cashreg\\Models\\DTOS\\CreateTicketDTO.cs",
+              "ToolTip": "C:\\Users\\alex.alyeksyeyenko\\Desktop\\cashreg\\back\\cashreg\\cashreg\\Models\\DTOS\\CreateTicketDTO.cs",
+              "RelativeToolTip": "cashreg\\Models\\DTOS\\CreateTicketDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-09T14:59:20.431Z",
               "EditorCaption": ""
             }
           ]

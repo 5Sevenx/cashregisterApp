@@ -10,6 +10,8 @@ namespace cashreg.Models
         public int Total_Id { get; set; }
         public Ticket Ticket { get; set; }
 
+       
+
         public int Amount { get;set; }
         public double Price { get; set; }
     }
