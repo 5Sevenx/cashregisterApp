@@ -10,7 +10,7 @@ Cash register that allows you to count purchases that were made, store data abou
       - Built with **Angular**.
   3. **DataBase**
       - Connect to the database that you have.
-        - Create 3 tables, and realize M:N relation.
+        - Create 4 tables, and realize M:N relation.
     
 ---
 
