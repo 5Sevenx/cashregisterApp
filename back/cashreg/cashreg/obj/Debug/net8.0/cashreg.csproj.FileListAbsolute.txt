@@ -43,3 +43,11 @@ C:\Users\alex.alyeksyeyenko\Desktop\cashreg\back\cashreg\cashreg\bin\Debug\net8.
 C:\Users\alex.alyeksyeyenko\Desktop\cashreg\back\cashreg\cashreg\bin\Debug\net8.0\Newtonsoft.Json.dll
 C:\Users\alex.alyeksyeyenko\Desktop\cashreg\back\cashreg\cashreg\bin\Debug\net8.0\Swashbuckle.Core.dll
 C:\Users\alex.alyeksyeyenko\Desktop\cashreg\back\cashreg\cashreg\bin\Debug\net8.0\WebActivatorEx.dll
+C:\Users\alex.alyeksyeyenko\Desktop\cashreg\back\cashreg\cashreg\bin\Debug\net8.0\Castle.Core.dll
+C:\Users\alex.alyeksyeyenko\Desktop\cashreg\back\cashreg\cashreg\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Proxies.dll
+C:\Users\alex.alyeksyeyenko\Desktop\cashreg\back\cashreg\cashreg\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\alex.alyeksyeyenko\Desktop\cashreg\back\cashreg\cashreg\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\alex.alyeksyeyenko\Desktop\cashreg\back\cashreg\cashreg\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\alex.alyeksyeyenko\Desktop\cashreg\back\cashreg\cashreg\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
+C:\Users\alex.alyeksyeyenko\Desktop\cashreg\back\cashreg\cashreg\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\alex.alyeksyeyenko\Desktop\cashreg\back\cashreg\cashreg\bin\Debug\net8.0\Microsoft.Extensions.Options.dll

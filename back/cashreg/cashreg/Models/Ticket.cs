@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using cashreg.Models.DTOS;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace cashreg.Models
 {
@@ -14,10 +15,10 @@ namespace cashreg.Models
 
         public int ID_Store { get; set; }
 
-        public Store Store { get; set; }
+        public virtual Store Store { get; set; }
 
         //contect with TotalProductLink table
-        public List<TotalProductLink> TotalProductLinks { get; set; }
+        public virtual List<TotalProductLink> TotalProductLinks { get; set; }
 
     }
 }

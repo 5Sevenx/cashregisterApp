@@ -26,7 +26,7 @@ export class MainComponent  implements OnInit {
   selectedProduct: product | null = null;
   selectedStore:Store | null = null;
   selectedAmount = 1;
-  tableItems: Array<{ id: number; name: string; price: number, amount:number }> = [];
+  tableItems: Array<{ id: number; name: string; price: number, amount:number , store:string}> = [];
 
   //Pre-load
   ngOnInit(): void {
@@ -53,7 +53,7 @@ export class MainComponent  implements OnInit {
   getstores(){
     this.productService.getstore().subscribe((d)=> {
       console.log(d);
-      this.stores =d
+      this.stores = d;
     })
   }
 
@@ -63,9 +63,11 @@ export class MainComponent  implements OnInit {
 
   //Add to table logic
   addToTable() {
-    if (this.selectedProduct) {
+    if (this.selectedProduct && this.selectedStore) {
       //if the product already exists in the table
       const existingProduct = this.tableItems.find(item => item.name === this.selectedProduct?.name);
+
+      const existingStore = this.tableItems.find(i => i.store === this.selectedStore?.name)
 
       if (existingProduct) {
         // If the product exists,update the amount by adding the selected amount
@@ -79,6 +81,7 @@ export class MainComponent  implements OnInit {
           name: this.selectedProduct.name,
           amount: Number(this.selectedAmount),
           price: price * Number(this.selectedAmount),
+          store:this.selectedStore?.name
         });
       }
     } else {
@@ -105,7 +108,8 @@ export class MainComponent  implements OnInit {
     const payload = {
       productList: this.tableItems.map(item => ({
         idProduct: item.id,
-        amount: item.amount || 1
+        amount: item.amount || 1,
+
       }))
     };
 
@@ -118,7 +122,6 @@ export class MainComponent  implements OnInit {
       error => {
         console.error('Error sending products:', error);
         alert('Failed to send products');
-
       }
     );
   }

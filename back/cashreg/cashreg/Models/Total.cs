@@ -6,9 +6,9 @@ namespace cashreg.Models
     public class TotalProductLink
     {
         public int Product_ID { get; set; }
-        public Product Product { get; set; }
+        public virtual Product Product { get; set; }
         public int Total_Id { get; set; }
-        public Ticket Ticket { get; set; }
+        public virtual Ticket Ticket { get; set; }
 
        
 

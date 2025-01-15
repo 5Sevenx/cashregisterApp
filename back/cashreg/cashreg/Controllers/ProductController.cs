@@ -23,26 +23,37 @@ namespace cashreg.Controllers
         public async Task<ActionResult<List<ProductsDTO>>> GetAllProducts()
         {
             var product = await _cont.Products.ToListAsync();
-            List<ProductsDTO> productsDTOs = product.Select(item => new ProductsDTO() { ID = item.ID, name = item.name, price = item.price }).ToList();
+            List<ProductsDTO> productsDTOs = product.Select(item => new ProductsDTO() { ID = item.ID, name = item.name, price = item.price}).ToList();
             return Ok(productsDTOs);
         }
         //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
         //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++GET ALL TICKETS+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
         [HttpGet("ticket")]
-        public async Task<ActionResult<List<TicketDto>>> GetAllTickets()
+        public async Task<ActionResult<List<TicketDTO2>>> GetAllTickets()
         {
-            var ticket = await _cont.Tickets.ToListAsync();
-            return Ok(ticket);
+       
+            var ticket = await _cont.Tickets.Include(t => t.Store).ToListAsync();
+     
+            List<TicketDTO2> ticketDtos = ticket.Select(i => new TicketDTO2()
+            {
+                ID = i.ID,
+                Price = i.Price,
+                Date = i.Date,
+                Store = new StoreDTO() { ID_Store = i.Store.ID_Store, Name = i.Store.Name }
+            }).ToList();
+
+            return Ok(ticketDtos);
         }
         //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
         //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++GET ALL TOTALS++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
         [HttpGet("total")]
-        public async Task<ActionResult<List<TotalProductLinkDTO>>> GetAllTotal()
+        public async Task<ActionResult<List<TotalProductLinkDTO2>>> GetAllTotal()
         {
             var total = await _cont.TotalProductLinks.ToListAsync();
-            return Ok(total);
+            List<TotalProductLinkDTO2> totalDtos = total.Select(i => new TotalProductLinkDTO2() { Product_ID = i.Product_ID, Total_Id = i.Total_Id, Amount = i.Amount, Price = i.Price }).ToList();
+            return Ok(totalDtos);
         }
         //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
@@ -51,7 +62,8 @@ namespace cashreg.Controllers
         public async Task<ActionResult<List<StoreDTO>>> GetAllStores()
         {
             var stores = await _cont.Stores.ToArrayAsync();
-            return Ok(stores);
+            List<StoreDTO> storesDto = stores.Select(i => new StoreDTO() { ID_Store = i.ID_Store, Name = i.Name }).ToList();
+            return Ok(storesDto);
         }
         //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
