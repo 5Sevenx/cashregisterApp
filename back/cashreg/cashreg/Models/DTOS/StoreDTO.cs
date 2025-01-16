@@ -1,6 +1,6 @@
 ﻿namespace cashreg.Models.DTOS
 {
-    public  class StoreDTO
+    public  class StoreDTO 
     {
 
         public int ID_Store { get; set; }

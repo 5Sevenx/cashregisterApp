@@ -3,8 +3,6 @@ import { Injectable } from "@angular/core";
 import { ticket } from "../interface/ticket.interface";
 import { total } from "../interface/total.interfaces";
 
-
-
 @Injectable({
   providedIn: 'root'
 })
@@ -20,17 +18,12 @@ export class TotalTicketService{
   private arrticket:ticket[] = [];
   private arrtotal:total[] = [];
 
-
   //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++HTTP METHODS+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-  getticket(){
-    return this.http.get<ticket[]>(`${this.baseUrl}Product/ticket`)
-  }
 
-  gettotal(){
-    return this.http.get<total[]>(`${this.baseUrl}Product/total`)
-  }
+  getticket(){return this.http.get<ticket[]>(`${this.baseUrl}Product/ticket`)}
+
+  gettotal(){return this.http.get<total[]>(`${this.baseUrl}Product/total`)}
+
   //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-
 
 }

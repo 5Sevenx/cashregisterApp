@@ -1,0 +1,22 @@
+<div class="d-flex flex-column align-items-center mt-4">
+  <h1 class="text-uppercase text-dark fw-bold mb-3" style="font-family: 'Arial', sans-serif; font-size: 2rem;">Add a new store</h1>
+  <!-- Input for store name -->
+  <input
+    [(ngModel)]="storeName"
+    type="text"
+    placeholder="Enter store name"
+    class="form-control mt-3"
+    style="width: 80%; max-width: 400px;">
+
+  <!-- Button to add store -->
+  <button (click)="addStore()" class="btn btn-primary mt-3">
+    Add Store
+  </button>
+
+  <hr style="border-top: 2px solid #0000005c; width: 100%;">
+</div>
+
+
+
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++TOTAL TABLE++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+

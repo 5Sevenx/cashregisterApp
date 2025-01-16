@@ -3,140 +3,125 @@
   <hr style="border-top: 2px solid #ccc; width: 80%;">
 </div>
 
-  <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++STORE++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
-  <div class="d-flex flex-column align-items-center mt-4">
-    <h1 class="text-uppercase text-dark fw-bold mb-3" style="font-family: 'Arial', sans-serif; font-size: 1.0rem;">Choose store</h1>
-              <select
-              class="form-select mb-4 shadow-sm"
-              id="productSelect"
-              style="width: 35%; font-size: 1rem; padding: 0.75rem;"
-              [(ngModel)]="selectedStore">
-              <option *ngFor="let store of stores" [ngValue]="store">{{ store.name }}</option>
-            </select>
-    <hr style="border-top: 2px solid #ccc; width: 80%;">
-    <h1 class="text-uppercase text-dark fw-bold mb-1" style="font-family: 'Arial', sans-serif; font-size: 1.0rem;">Choose products</h1>
-  </div>
-  <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++STORE++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<div class="d-flex flex-column align-items-center mt-4">
+  <h1 class="text-uppercase text-dark fw-bold mb-3" style="font-family: 'Arial', sans-serif; font-size: 1.0rem;">Choose store</h1>
+  <select
+    class="form-select mb-4 shadow-sm"
+    id="productSelect"
+    style="width: 35%; font-size: 1rem; padding: 0.75rem;"
+    [(ngModel)]="selectedStore">
+    <option *ngFor="let store of stores" [ngValue]="store">{{ store.name }}</option>
+  </select>
+  <hr style="border-top: 2px solid #ccc; width: 80%;">
+  <h1 class="text-uppercase text-dark fw-bold mb-1" style="font-family: 'Arial', sans-serif; font-size: 1.0rem;">Choose products</h1>
+</div>
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 
-    <div class="d-flex flex-column align-items-center mt-5">
-      <div class="shadow-lg rounded px-5 py-4" style="background: #f9f9f9; width: 60%;">
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ Toggled Menu Content ++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 
-        <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++PRODUCT++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
-        <label for="productSelect" class="form-label text-dark fw-semibold" style="font-size: 1.2rem;">Choose product:</label>
-            <select
-              class="form-select mb-4 shadow-sm"
-              id="productSelect"
-              style="width: 100%; font-size: 1rem; padding: 0.75rem;"
-              [(ngModel)]="selectedProduct">
-              <option *ngFor="let product of products" [ngValue]="product">{{ product.name }}</option>
-            </select>
-        <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+  <div class="d-flex flex-column align-items-center mt-5">
+    <div class="shadow-lg rounded px-5 py-4" style="background: #f9f9f9; width: 60%;">
 
-        <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++AMOUNT+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
-        <label for="amountSelect" class="form-label text-dark fw-semibold" style="font-size: 1.2rem;">Choose amount:</label>
-              <select
-                class="form-select shadow-sm"
-                id="amountSelect"
-                style="width: 100%; font-size: 1rem; padding: 0.75rem;"
-                [(ngModel)]="selectedAmount"
-                type="number">
-                <option *ngFor="let number of numbers" [value]="number">{{ number }}</option>
-              </select>
-        <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+      <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++PRODUCT++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+      <label for="productSelect" class="form-label text-dark fw-semibold" style="font-size: 1.2rem;">Choose product:</label>
+      <select
+        class="form-select mb-4 shadow-sm"
+        id="productSelect"
+        style="width: 100%; font-size: 1rem; padding: 0.75rem;"
+        [(ngModel)]="selectedProduct">
+        <option *ngFor="let product of products" [ngValue]="product">{{ product.name }}</option>
+      </select>
+      <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 
-        <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ADD BUTTON+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
-        <div class="d-flex justify-content-center mt-4">
-              <button
-                class="btn btn-primary rounded-pill shadow-lg px-5 py-2 fw-bold"
-                style="font-size: 1.2rem; background: #0071e3; border: none;"
-                (click)="addToTable()">
-                Add to Table
-              </button>
-        </div>
-        <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+      <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++AMOUNT+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+      <label for="amountSelect" class="form-label text-dark fw-semibold" style="font-size: 1.2rem;">Choose amount:</label>
+      <select
+        class="form-select shadow-sm"
+        id="amountSelect"
+        style="width: 100%; font-size: 1rem; padding: 0.75rem;"
+        [(ngModel)]="selectedAmount"
+        type="number">
+        <option *ngFor="let number of numbers" [value]="number">{{ number }}</option>
+      </select>
+      <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+      <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ADD BUTTON+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+      <div class="d-flex justify-content-center mt-4">
+        <button
+          class="btn btn-primary rounded-pill shadow-lg px-5 py-2 fw-bold"
+          style="font-size: 1.2rem; background: #0071e3; border: none;"
+          (click)="addToTable()">
+          Add to Table
+        </button>
       </div>
+      <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
     </div>
+  </div>
 
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ END MENU TOGGLE ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 
 <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++PRODUCT TABLE++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 <div class="d-flex flex-column align-items-center my-5">
   <h1 class="mb-4 text-uppercase text-dark fw-bold" *ngFor="let item of justnameofthestore; let i = index" style="font-family: 'Arial', sans-serif; font-size: 2.5rem;">Products {{item._store}} </h1>
-        <table class="table table-hover shadow rounded" style="width: 95%; background: #f9f9f9;">
-          <thead class="table-light text-center" style="font-size: 1.2rem; font-weight: 600;">
-            <tr>
-              <th scope="col">Name</th>
-              <th scope="col">Amount</th>
-              <th scope="col">Total Price</th>
-              <th scope="col">Actions</th>
-            </tr>
-          </thead>
-          <tbody class="text-center align-middle">
-            <tr *ngFor="let item of tableItems; let i = index" class="table-light" style="font-size: 1.1rem;">
-              <td class="fw-semibold">{{ item.name }}</td>
-              <td>
+  <table class="table table-hover shadow rounded" style="width: 95%; background: #f9f9f9;">
+    <thead class="table-light text-center" style="font-size: 1.2rem; font-weight: 600;">
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Amount</th>
+        <th scope="col">Total Price</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody class="text-center align-middle">
+      <tr *ngFor="let item of tableItems; let i = index" class="table-light" style="font-size: 1.1rem;">
+        <td class="fw-semibold">{{ item.name }}</td>
+        <td>
 
-                <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++INCREMENT BUTTONS++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
-                <div class="d-flex justify-content-center align-items-center">
-                  <button
-                    class="btn btn-secondary btn-sm rounded-pill shadow-sm px-2"
-                    (click)="decrementAmount(i)">
-                    -
-                  </button>
-                  <span class="mx-2">{{ item.amount }}</span>
-                  <button
-                    class="btn btn-secondary btn-sm rounded-pill shadow-sm px-2"
-                    (click)="incrementAmount(i)">
-                    +
-                  </button>
-                </div>
-                <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
-              </td>
-              <td class="text-success fw-bold">{{ item.price | currency:'USD':'symbol':'1.2-2' }}</td>
-              <td>
-                <button
-                  class="btn btn-danger btn-sm rounded-pill shadow-sm px-4"
-                  (click)="removeItem(i)"
-                  style="font-size: 0.9rem;">
-                  Delete
-                </button>
-              </td>
-            </tr>
+          <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++INCREMENT BUTTONS++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+          <div class="d-flex justify-content-center align-items-center">
+            <button
+              class="btn btn-secondary btn-sm rounded-pill shadow-sm px-2"
+              (click)="decrementAmount(i)">
+              -
+            </button>
+            <span class="mx-2">{{ item.amount }}</span>
+            <button
+              class="btn btn-secondary btn-sm rounded-pill shadow-sm px-2"
+              (click)="incrementAmount(i)">
+              +
+            </button>
+          </div>
+          <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+        </td>
+        <td class="text-success fw-bold">{{ item.price | currency:'USD':'symbol':'1.2-2' }}</td>
+        <td>
+          <button
+            class="btn btn-danger btn-sm rounded-pill shadow-sm px-4"
+            (click)="removeItem(i)"
+            style="font-size: 0.9rem;">
+            Delete
+          </button>
+        </td>
+      </tr>
 
-            <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++TOTAL++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
-            <tr class="table-info fw-bold text-dark">
-              <td colspan="3" class="text-end text-uppercase" style="font-size: 1.2rem;">Total:</td>
-              <td class="text-success" style="font-size: 1.2rem;">{{ totalPrice | currency:'USD':'symbol':'1.2-2' }}</td>
-            </tr>
-            <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
-          </tbody>
-        </table>
-  <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+      <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++TOTAL++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+      <tr class="table-info fw-bold text-dark">
+        <td colspan="3" class="text-end text-uppercase" style="font-size: 1.2rem;">Total:</td>
+        <td class="text-success" style="font-size: 1.2rem;">{{ totalPrice | currency:'USD':'symbol':'1.2-2' }}</td>
+      </tr>
+      <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+    </tbody>
+  </table>
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 
-
-  <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++SUBMIT BUTTON+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
-  <div class="d-flex justify-content-end mt-4" style="width: 95%;">
-        <button
-          class="btn btn-primary rounded-pill shadow-lg px-5 py-2 fw-bold"
-          style="font-size: 1.2rem; background: #0071e3; border: none;"
-          (click)="sendTableProducts()">
-          Submit
-        </button>
-  </div>
-  <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
-
-
-<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++TICKETS+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
-<div class="d-flex flex-column align-items-center mt-4">
-  <h1 class="text-uppercase text-dark fw-bold mb-3" style="font-family: 'Arial', sans-serif; font-size: 2.5rem;">View tickets</h1>
-  <hr style="border-top: 2px solid #ccc; width: 80%;">
-    <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++REDIRECTION BUTTON++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
-      <button
-        class="btn btn-primary rounded-pill shadow-lg px-5 py-2 fw-bold"
-        style="font-size: 1.2rem; background: #0071e3; border: none;"
-        [routerLink]="['/ticket']" routerLinkActive="router-link-active" >
-        Tickets
-      </button>
-    <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++SUBMIT BUTTON+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<div class="d-flex justify-content-end mt-4" style="width: 95%;">
+  <button
+    class="btn btn-primary rounded-pill shadow-lg px-5 py-2 fw-bold"
+    style="font-size: 1.2rem; background: #0071e3; border: none;"
+    (click)="sendTableProducts()">
+    Submit
+  </button>
 </div>
-<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
-
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->

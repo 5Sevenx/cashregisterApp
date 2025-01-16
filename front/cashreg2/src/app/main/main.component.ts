@@ -10,9 +10,10 @@ import { Store } from '../interface/store.interface';
   templateUrl: './main.component.html',
   standalone:true,
   imports: [
-CommonModule,CurrencyPipe,FormsModule, RouterModule
+CommonModule,FormsModule, RouterModule
   ]
 })
+
 
 export class MainComponent  implements OnInit {
 
@@ -21,7 +22,6 @@ export class MainComponent  implements OnInit {
   //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
   //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++GET PRODUCT NAME++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
   selectedProduct: product | null = null;
   selectedStore:Store | null = null;
   selectedAmount = 1;

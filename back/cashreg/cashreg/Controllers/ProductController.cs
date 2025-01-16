@@ -4,6 +4,7 @@ using cashreg.Data;
 using cashreg.Models;
 using cashreg.Models.DTOS;
 using System.Linq;
+using System.Net.Sockets;
 
 namespace cashreg.Controllers
 {
@@ -18,6 +19,7 @@ namespace cashreg.Controllers
             _cont = context;
         }
 
+
         //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++GET ALL PRODUCTS++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
         [HttpGet]
         public async Task<ActionResult<List<ProductsDTO>>> GetAllProducts()
@@ -27,6 +29,7 @@ namespace cashreg.Controllers
             return Ok(productsDTOs);
         }
         //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 
         //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++GET ALL TICKETS+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
         [HttpGet("ticket")]
@@ -47,6 +50,7 @@ namespace cashreg.Controllers
         }
         //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
+
         //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++GET ALL TOTALS++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
         [HttpGet("total")]
         public async Task<ActionResult<List<TotalProductLinkDTO2>>> GetAllTotal()
@@ -56,6 +60,7 @@ namespace cashreg.Controllers
             return Ok(totalDtos);
         }
         //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
 
         //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++GET ALL STORES++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
         [HttpGet("store")]
@@ -67,6 +72,8 @@ namespace cashreg.Controllers
         }
         //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
+
+        //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++CREATE TICKET+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
         [HttpPost("create-ticket")]
         public async Task<IActionResult> CreateTicketWithProducts([FromBody] CreateTicketDTO ticketDto)
         {
@@ -146,6 +153,40 @@ namespace cashreg.Controllers
 
             return Ok(ticketDtoResult);
         }
+        //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+        //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++CREATE STORE++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+        [HttpPost("create-store")]
+        public async Task<IActionResult> CreateStoreWithProducts([FromBody] StoreDTO storeDTO)
+        {
+            //take name equal to introduced name to verify if exist
+            var stores = await _cont.Stores.Where(i => i.Name == storeDTO.Name).ToArrayAsync();
+
+            if (stores.Any())
+            {
+                return BadRequest("Store with that name already exist");
+            }
+
+            //save it in data base,id autoincremented 
+            var newStore = new Store
+            {
+                Name = storeDTO.Name,
+            };
+
+            await _cont.Stores.AddAsync(newStore);
+            await _cont.SaveChangesAsync();
+
+            //return dto
+            var newStoreDTO = new StoreDTO
+            {
+                ID_Store = newStore.ID_Store,
+                Name = newStore.Name
+            };
+
+            return Ok(newStoreDTO);
+        }
+        //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++CREATE STORE++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     }
 }
 

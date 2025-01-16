@@ -1,39 +1,34 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { product } from '../interface/product.interface';
+import { ticket } from "../interface/ticket.interface";
+import { total } from "../interface/total.interfaces";
 import { Store } from "../interface/store.interface";
 
 @Injectable({
   providedIn: 'root'
 })
-export class ProductService{
+
+export class StoreService{
+
   constructor(private http: HttpClient) {}
 
   //localhost variable
   private baseUrl:string = 'http://localhost:5243/api/';
 
-  //product array for method
-  private arrproduct:product[] = [];
-
-  private arrstores:Store[] = []
+  //total-ticket array for method
+  private arrstore:Store[] = [];
 
   //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++HTTP METHODS+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-  getall(){
-    return this.http.get<product[]>(`${this.baseUrl}Product`)
-  }
 
-  //Add prodcuts method
-  addProducts(payload: { productList: Array<{ idProduct: number; amount: number }> }, iD_Store:number) {
+  addStore(store:{iD_Store:number; name:string}){
     const requestBody = {
-      productList: payload.productList,
-      iD_Store: iD_Store
-    };
-    return this.http.post(`${this.baseUrl}Product/create-ticket`,requestBody);
+      iD_Store: 0,
+      name:store
+    }
+    return this.http.post(`${this.baseUrl}Product/create-store`,requestBody);
   }
 
-  getstore(){
-    return this.http.get<Store[]>(`${this.baseUrl}Product/store`)
-  }
 
   //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 }

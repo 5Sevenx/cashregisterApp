@@ -45,7 +45,6 @@ export class TicketComponent  implements OnInit {
   private arrtotal:total[] = [];
   private arrstore:Store[] = [];
 
-
   selectedTotal:number | null= null;
   selectedTicket:number | null = null;
   selectedStore:string = '';
@@ -96,7 +95,6 @@ export class TicketComponent  implements OnInit {
 
     const ticket = this.tableItemsTicket.find(i => i.id === totalid);
 
-
     this.selectedStore = this.arrstore.find(s => s.iD_Store === ticket?.iD_Store)?.name || '';
 
     //clear table
@@ -104,7 +102,6 @@ export class TicketComponent  implements OnInit {
 
     //select items wich is equal to totalid
     const selectedTotals = this.tableItemsTotal.filter(item => item.total_Id === totalid);
-
 
     selectedTotals.forEach(totalItem => {
 
@@ -121,9 +118,6 @@ export class TicketComponent  implements OnInit {
         });
       }
     });
-
-    //console.log(this.selectedStore)
-
     console.log('Updated tabletoadd:', this.tabletoadd);
   }
 

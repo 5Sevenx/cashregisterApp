@@ -21,6 +21,22 @@
   },
   {
     "ContainingType": "cashreg.Controllers.ProductController",
+    "Method": "CreateStoreWithProducts",
+    "RelativePath": "api/Product/create-store",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "storeDTO",
+        "Type": "cashreg.Models.DTOS.StoreDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "cashreg.Controllers.ProductController",
     "Method": "CreateTicketWithProducts",
     "RelativePath": "api/Product/create-ticket",
     "HttpMethod": "POST",

@@ -7,8 +7,4 @@ import { ProductService } from './services/product.service';
   templateUrl: './app.component.html',
   standalone: false,
 })
-export class AppComponent {
-
-  }
-
-  //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+export class AppComponent {}
