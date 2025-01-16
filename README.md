@@ -11,7 +11,9 @@ Cash register that allows you to count purchases that were made, store data abou
   3. **DataBase**
       - Connect to the database that you have.
         - Create 4 tables, and realize M:N relation.
-    
+         <p align="center"> <img src="https://github.com/user-attachments/assets/6e146ee3-a82a-4861-af12-2cf94422ea8a" alt="Table" /> </p>
+
+        
 ---
 
 ### Configuration 
