@@ -8,6 +8,7 @@ import { CommonModule, CurrencyPipe } from '@angular/common';
 import { product } from '../interface/product.interface';
 import { HttpClient } from '@angular/common/http';
 import { ProductService } from '../services/product.service';
+import { Store } from '../interface/store.interface';
 
 @Component({
   selector: 'main',
@@ -25,11 +26,12 @@ export class TicketComponent  implements OnInit {
     this.gettotal();
     this.gettickets();
     this.getproducts();
+    this.getstore();
   }
 
   //Tables
   tableItemsTotal: Array<{​product_ID:number,total_Id:number,amount:number,price:number }> = [];
-  tableItemsTicket: Array<{id:number,price:number,date:Date }> = [];
+  tableItemsTicket: Array<{id:number,price:number,date:Date, iD_Store:number, Name:string }> = [];
 
   tabletoadd: Array<{id:number, name:string,price:number,amount:number}> = [];
 
@@ -41,27 +43,37 @@ export class TicketComponent  implements OnInit {
   private products:product[] = [];
   private arrticket:ticket[] = [];
   private arrtotal:total[] = [];
-
+  private arrstore:Store[] = [];
 
 
   selectedTotal:number | null= null;
   selectedTicket:number | null = null;
+  selectedStore:string = '';
 
   //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++GET TOTAL&TICKET INFO++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
   gettotal(){
     this.TotalTicketService.gettotal().subscribe((d) => {
       console.log(d);
       this.arrtotal = d;
-      this.tableItemsTotal = d;
+      this.tableItemsTotal = d
     })
   }
 
-  gettickets(){
+  gettickets() {
     this.TotalTicketService.getticket().subscribe((d) => {
       console.log(d);
       this.arrticket = d;
-      this.tableItemsTicket = d;
-    })
+
+      this.tableItemsTicket = d.map(ticket => {
+        return {
+          id: ticket.id,
+          price: ticket.price,
+          date: ticket.date,
+          iD_Store: ticket.store.iD_Store,
+          Name: ticket.store.name
+        };
+      });
+    });
   }
 
   getproducts(){
@@ -71,10 +83,21 @@ export class TicketComponent  implements OnInit {
     })
   }
 
-  //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+  getstore(){
+    this.ProductService.getstore().subscribe((d) => {
+      console.log(d);
+      this.arrstore = d;
+    })
+  }
 
+  //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
   ViewTotal(totalid: number) {
     this.selectedTicket = totalid;
+
+    const ticket = this.tableItemsTicket.find(i => i.id === totalid);
+
+
+    this.selectedStore = this.arrstore.find(s => s.iD_Store === ticket?.iD_Store)?.name || '';
 
     //clear table
     this.tabletoadd = [];
@@ -99,8 +122,9 @@ export class TicketComponent  implements OnInit {
       }
     });
 
+    //console.log(this.selectedStore)
+
     console.log('Updated tabletoadd:', this.tabletoadd);
   }
-
 
 }

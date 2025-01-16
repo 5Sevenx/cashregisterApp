@@ -26,8 +26,12 @@ export class ProductService{
 
 
   //Add prodcuts method
-  addProducts(payload: { productList: Array<{ idProduct: number; amount: number }> }) {
-    return this.http.post(`${this.baseUrl}Product/create-ticket`, payload);
+  addProducts(payload: { productList: Array<{ idProduct: number; amount: number }> }, iD_Store:number) {
+    const requestBody = {
+      productList: payload.productList,
+      iD_Store: iD_Store
+    };
+    return this.http.post(`${this.baseUrl}Product/create-ticket`,requestBody);
   }
 
   getstore(){

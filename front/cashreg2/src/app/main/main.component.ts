@@ -12,7 +12,6 @@ import { Store } from '../interface/store.interface';
   imports: [
 CommonModule,CurrencyPipe,FormsModule, RouterModule
   ]
-
 })
 
 export class MainComponent  implements OnInit {
@@ -26,7 +25,7 @@ export class MainComponent  implements OnInit {
   selectedProduct: product | null = null;
   selectedStore:Store | null = null;
   selectedAmount = 1;
-  tableItems: Array<{ id: number; name: string; price: number, amount:number , store:number}> = [];
+  tableItems: Array<{ id: number; name: string; price: number, amount:number , iD_Store:number}> = [];
   justnameofthestore: Array<{_store:string}> = [];
 
   //Pre-load
@@ -67,7 +66,7 @@ export class MainComponent  implements OnInit {
       //if the product already exists in the table
       const existingProduct = this.tableItems.find(i => i.name === this.selectedProduct?.name);
       //prevent user from try to add new product being on other store
-      const exitingStore = this.tableItems.find(i => i.store !== this.selectedStore?.iD_Store)&&this.tableItems.find(i => i.id);
+      const exitingStore = this.tableItems.find(i => i.iD_Store !== this.selectedStore?.iD_Store)&&this.tableItems.find(i => i.id);
 
       if (exitingStore){
         alert ('Store already choosen, delet all the products before set new store!')
@@ -87,9 +86,8 @@ export class MainComponent  implements OnInit {
             name: this.selectedProduct.name,
             amount: Number(this.selectedAmount),
             price: price * Number(this.selectedAmount),
-            store:this.selectedStore.iD_Store
+            iD_Store:this.selectedStore.iD_Store
           });
-
           //add name of the store
           this.justnameofthestore.push({
             _store: this.selectedStore.name
@@ -100,11 +98,7 @@ export class MainComponent  implements OnInit {
     } else {
       alert('Make sure you have the right product and store');
     }
-
-
   }
-
-
 
   //Remove items
   removeItem(index: number) {
@@ -122,25 +116,29 @@ export class MainComponent  implements OnInit {
 
   //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++INSERT BUTTON++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
   sendTableProducts() {
-    const payload = {
-      productList: this.tableItems.map(item => ({
-        idProduct: item.id,
-        amount: item.amount || 1,
-      }))
-    };
+  // Ensure all items have the same store
+  const uniqueStores = this.tableItems.map(item => item.iD_Store);
 
-    this.productService.addProducts(payload).subscribe(
-      response => {
-        console.log('Products sent successfully:', response);
-        alert('Products sent successfully!');
-        this.tableItems = [];
-      },
-      error => {
-        console.error('Error sending products:', error);
-        alert('Failed to send products');
-      }
-    );
-  }
+  // defined cont for addproducts method
+  const iD_Store = uniqueStores[0];
+  const payload = {
+    productList: this.tableItems.map(item => ({
+      idProduct: item.id,
+      amount: item.amount,
+    }))
+  };
+
+  this.productService.addProducts(payload, iD_Store).subscribe(
+    response => {
+      alert('Products sent successfully!');
+      this.tableItems = [];
+      this.justnameofthestore = [];
+    },
+    error => {
+      alert('Failed to send products');
+    }
+  );
+}
   //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
   //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++INCREMENT BUTTNOS+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

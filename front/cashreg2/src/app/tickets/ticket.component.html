@@ -11,6 +11,7 @@
         <th scope="col" class="col-2">Ticket id</th>
         <th scope="col" class="col-2">Price</th>
         <th scope="col" class="col-2">Date</th>
+        <th scope="col" class="col-2">Store</th>
         <th scope="col" class="col-2">Actions</th>
       </tr>
     </thead>
@@ -19,12 +20,10 @@
         <td>{{ arr.id }}</td>
         <td>{{ arr.price }}</td>
         <td>{{ arr.date }}</td>
+        <td>{{ arr.Name }}</td>
         <td>
-          <button class="btn btn-danger btn-sm rounded-pill shadow-sm px-4"
-          (click)="ViewTotal(arr.id)"
-          >
+          <button class="btn btn-danger btn-sm rounded-pill shadow-sm px-4" (click)="ViewTotal(arr.id)">
             View
-
           </button>
         </td>
       </tr>
@@ -35,7 +34,7 @@
 
   <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++PRODUCTS TABLE++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
   <div class="d-flex flex-column align-items-center mt-4">
-    <h1 class="text-uppercase text-dark fw-bold mb-3" style="font-family: 'Arial', sans-serif; font-size: 2.5rem;">Tickets</h1>
+    <h1 class="text-uppercase text-dark fw-bold mb-3" style="font-family: 'Arial', sans-serif; font-size: 2.5rem;">Tickets {{selectedStore}} </h1>
     <hr style="border-top: 2px solid #0000005c; width: 100%;">
   </div>
 

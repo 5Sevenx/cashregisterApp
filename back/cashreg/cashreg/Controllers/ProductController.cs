@@ -146,8 +146,6 @@ namespace cashreg.Controllers
 
             return Ok(ticketDtoResult);
         }
-
-
     }
 }
 
