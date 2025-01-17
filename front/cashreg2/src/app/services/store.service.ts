@@ -21,11 +21,8 @@ export class StoreService{
   //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++HTTP METHODS+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
   addStore(store:{iD_Store:number; name:string}){
-    const requestBody = {
-      iD_Store: 0,
-      name:store
-    }
-    return this.http.post(`${this.baseUrl}Product/create-store`,requestBody);
+
+    return this.http.post(`${this.baseUrl}Product/create-store`,store);
   }
 
 

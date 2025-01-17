@@ -79,8 +79,7 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-03T10:23:19.645Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -141,8 +140,7 @@
               "RelativeToolTip": "cashreg\\Models\\DTOS\\StoreDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAqwAIAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-14T13:13:04.934Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-14T13:13:04.934Z"
             },
             {
               "$type": "Document",
@@ -152,7 +150,7 @@
               "RelativeDocumentMoniker": "cashreg\\Controllers\\ProductController.cs",
               "ToolTip": "C:\\Users\\alex.alyeksyeyenko\\Desktop\\cashreg\\back\\cashreg\\cashreg\\Controllers\\ProductController.cs",
               "RelativeToolTip": "cashreg\\Controllers\\ProductController.cs",
-              "ViewState": "AgIAAEcAAAAAAAAAAAAgwK8AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAEIAAAAAAAAAAAA6wK8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-14T13:09:32.373Z",
               "EditorCaption": ""
@@ -167,8 +165,7 @@
               "RelativeToolTip": "cashreg\\Models\\Store.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAqwAkAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-14T10:23:17.628Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-14T10:23:17.628Z"
             },
             {
               "$type": "Document",
@@ -192,8 +189,7 @@
               "RelativeToolTip": "cashreg\\Models\\DTOS\\CreateTicketDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-09T14:59:20.431Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-09T14:59:20.431Z"
             },
             {
               "$type": "Document",
@@ -205,8 +201,7 @@
               "RelativeToolTip": "cashreg\\Models\\Ticket.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-15T11:20:30.909Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-15T11:20:30.909Z"
             },
             {
               "$type": "Document",

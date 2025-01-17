@@ -3,7 +3,7 @@ import { ticket } from '../interface/ticket.interface';
 import { total } from '../interface/total.interfaces';
 import { TotalTicketService } from '../services/total-ticket.service';
 import { FormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
+import { Route, Router, RouterModule } from '@angular/router';
 import { CommonModule, CurrencyPipe } from '@angular/common';
 import { product } from '../interface/product.interface';
 import { HttpClient } from '@angular/common/http';
@@ -27,7 +27,7 @@ export class StoreComponent  implements OnInit {
   ngOnInit() {
   }
 
- constructor(private StoreService:StoreService){}
+ constructor(private StoreService:StoreService, private Route:Router){}
 
  addStore() {
   if (this.storeName.trim() === '') {
@@ -41,11 +41,13 @@ export class StoreComponent  implements OnInit {
   // Call the service method to add the store
   this.StoreService.addStore(store)
     .subscribe(response => {
-      console.log('Store added successfully', response);
-      // You can reset the input field or perform other actions after store is added
+      alert("Store created!")
+
       this.storeName = '';
+      //redirect
+      this.Route.navigate(['/main']);
     }, error => {
-      console.error('Error adding store', error);
+      alert("Error creating store!")
     });
 }
 
