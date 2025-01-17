@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\alex.alyeksyeyenko\\Desktop\\cashreg\\back\\cashreg\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7D765523-9186-4F50-B66E-607A684DDF89}|cashreg\\cashreg.csproj|c:\\users\\alex.alyeksyeyenko\\desktop\\cashreg\\back\\cashreg\\cashreg\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7D765523-9186-4F50-B66E-607A684DDF89}|cashreg\\cashreg.csproj|solutionrelative:cashreg\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{7D765523-9186-4F50-B66E-607A684DDF89}|cashreg\\cashreg.csproj|c:\\users\\alex.alyeksyeyenko\\desktop\\cashreg\\back\\cashreg\\cashreg\\models\\linkstore.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7D765523-9186-4F50-B66E-607A684DDF89}|cashreg\\cashreg.csproj|solutionrelative:cashreg\\models\\linkstore.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7D765523-9186-4F50-B66E-607A684DDF89}|cashreg\\cashreg.csproj|c:\\users\\alex.alyeksyeyenko\\desktop\\cashreg\\back\\cashreg\\cashreg\\data\\data.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7D765523-9186-4F50-B66E-607A684DDF89}|cashreg\\cashreg.csproj|solutionrelative:cashreg\\data\\data.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7D765523-9186-4F50-B66E-607A684DDF89}|cashreg\\cashreg.csproj|c:\\users\\alex.alyeksyeyenko\\desktop\\cashreg\\back\\cashreg\\cashreg\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7D765523-9186-4F50-B66E-607A684DDF89}|cashreg\\cashreg.csproj|solutionrelative:cashreg\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7D765523-9186-4F50-B66E-607A684DDF89}|cashreg\\cashreg.csproj|c:\\users\\alex.alyeksyeyenko\\desktop\\cashreg\\back\\cashreg\\cashreg\\models\\dtos\\linkstoredto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -74,11 +74,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 10,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Data.cs",
               "DocumentMoniker": "C:\\Users\\alex.alyeksyeyenko\\Desktop\\cashreg\\back\\cashreg\\cashreg\\Data\\Data.cs",
               "RelativeDocumentMoniker": "cashreg\\Data\\Data.cs",
@@ -157,7 +157,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "ProductController.cs",
               "DocumentMoniker": "C:\\Users\\alex.alyeksyeyenko\\Desktop\\cashreg\\back\\cashreg\\cashreg\\Controllers\\ProductController.cs",
               "RelativeDocumentMoniker": "cashreg\\Controllers\\ProductController.cs",
@@ -208,13 +208,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "LinkStore.cs",
               "DocumentMoniker": "C:\\Users\\alex.alyeksyeyenko\\Desktop\\cashreg\\back\\cashreg\\cashreg\\Models\\LinkStore.cs",
               "RelativeDocumentMoniker": "cashreg\\Models\\LinkStore.cs",
               "ToolTip": "C:\\Users\\alex.alyeksyeyenko\\Desktop\\cashreg\\back\\cashreg\\cashreg\\Models\\LinkStore.cs*",
               "RelativeToolTip": "cashreg\\Models\\LinkStore.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAA0AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAwAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-17T12:24:31.066Z",
               "EditorCaption": ""

@@ -23,5 +23,13 @@ export class ProductCreateService{
     return this.http.post(`${this.baseUrl}Product/create-product`, product);
   }
 
+  addjustaddidkwhattoputeheretbh(smth: {productList: Array<{idProduct:number}>}, smthbutstore:number ){
+    const requestBody = {
+      productList: smth.productList,
+      smthbutstore:smthbutstore
+    }
+    return this.http.post(`${this.baseUrl}Product/create-ticket`,requestBody);
+  }
+
   //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 }

@@ -3,6 +3,10 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { CommonModule, CurrencyPipe } from '@angular/common';
 import { ProductCreateService } from '../services/productcreate.service';
+import { Store } from '../interface/store.interface';
+import { StoreService } from '../services/store.service';
+import { ProductService } from '../services/product.service';
+import { product } from '../interface/product.interface';
 
 
 @Component({
@@ -17,11 +21,27 @@ import { ProductCreateService } from '../services/productcreate.service';
 
 export class ProductcreateComponent  implements OnInit {
   ngOnInit(): void {
-
+    this.getstore();
+    this.getproduct();
   }
 
-  constructor(private ProductCreateService:ProductCreateService){}
+  getstore(){
+    this.Store.getstore().subscribe(d =>{
+      this.stores = d;
+    })
+  }
 
+  getproduct(){
+    this.Store.getall().subscribe(d =>{
+      this.product = d;
+    })
+  }
+
+  product:product [] = [];
+  stores:Store [] = [];
+  constructor(private ProductCreateService:ProductCreateService, private Store:ProductService){}
+  selectedStore:Store | null = null;
+  selectedproduct:product | null = null;
   productname: string = '';
   productprice:number ;
 
@@ -43,6 +63,10 @@ export class ProductcreateComponent  implements OnInit {
       error:(error) => alert('Eror creating product:' + error.message)
     })
 
+
+  }
+
+  addlinkmethod(){
 
   }
 
