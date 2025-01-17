@@ -21,6 +21,22 @@
   },
   {
     "ContainingType": "cashreg.Controllers.ProductController",
+    "Method": "CreateLinkToProducts",
+    "RelativePath": "api/Product/create-link-to-store",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "linkStoreDTO",
+        "Type": "cashreg.Models.DTOS.LinkStoreDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "cashreg.Controllers.ProductController",
     "Method": "CreateProduct",
     "RelativePath": "api/Product/create-product",
     "HttpMethod": "POST",

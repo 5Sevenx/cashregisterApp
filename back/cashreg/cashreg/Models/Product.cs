@@ -17,6 +17,7 @@ namespace cashreg.Models
 
         //contect with TotalProductLink table
         public virtual List<TotalProductLink> TotalProductLinks { get; set; }
+        public virtual ICollection<LinkStore> LinkStores { get; set; }
 
     }
     //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++MAIN TABLE+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

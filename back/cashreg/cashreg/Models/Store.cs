@@ -10,7 +10,8 @@ namespace cashreg.Models
         public int ID_Store { get; set; }
         public string Name { get; set; }
 
-        //contect with TotalProductLink table
+        
         public virtual ICollection<Ticket> Tickets{ get; set; }
+        public virtual ICollection<LinkStore> LinkStores{ get; set; }
     }
 }

@@ -11,9 +11,9 @@ namespace cashreg.Data
         public DbSet<Product> Products { get; set; }
         public DbSet<Ticket> Tickets { get; set; }
         public DbSet<Store> Stores { get; set; }
+        public DbSet<LinkStore> LinkStores { get; set; }
         public DbSet<TotalProductLink> TotalProductLinks { get; set; }
         //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -24,6 +24,8 @@ namespace cashreg.Data
             //for ticket
             modelBuilder.Entity<Ticket>()
            .HasKey(t => t.ID);
+            //for linkStore 
+            modelBuilder.Entity<LinkStore>().HasKey(tpl => new { tpl.ID_Product, tpl.ID_Store });
             //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
             modelBuilder.Entity<TotalProductLink>()
@@ -40,6 +42,16 @@ namespace cashreg.Data
                 .HasOne(t => t.Store)
                 .WithMany(s => s.Tickets)
                 .HasForeignKey(t => t.ID_Store);
+
+            modelBuilder.Entity<LinkStore>()
+                .HasOne(tpl => tpl.Store)
+                .WithMany(p => p.LinkStores)
+                .HasForeignKey(tpl => tpl.ID_Store);
+
+            modelBuilder.Entity<LinkStore>()
+                .HasOne(tpl => tpl.Product)
+                .WithMany(s => s.LinkStores)
+                .HasForeignKey(tpl => tpl.ID_Product);
 
         }
     }
