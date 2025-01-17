@@ -1,0 +1,27 @@
+
+<div class="d-flex flex-column align-items-center mt-3">
+  <h1 class="text-uppercase text-dark fw-bold mb-3" style="font-family: 'Arial', sans-serif; font-size: 2rem;">Create your product</h1>
+  <div class="d-flex justify-content-center align-items-center" style="width: 50%; max-width: 400px; gap: 1rem;">
+    <input
+      [(ngModel)]="productname"
+      type="text"
+      placeholder="Product name"
+      class="form-control"
+      style="flex: 1;">
+    <input
+      [(ngModel)]="productprice"
+      type="text"
+      placeholder="Product price"
+      class="form-control"
+      style="flex: 1;">
+  </div>
+  <button (click)="addproduct()" class="btn btn-primary mt-3">
+    Add Product
+  </button>
+  <hr style="border-top: 2px solid #ccc; width: 80%;">
+</div>
+
+<!-- <div class="d-flex flex-column align-items-center mt-3">
+  <h1 class="text-uppercase text-dark fw-bold mb-3" style="font-family: 'Arial', sans-serif; font-size: 1rem;">Assign product to store</h1>
+
+</div> -->

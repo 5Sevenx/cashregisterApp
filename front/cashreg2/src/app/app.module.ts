@@ -10,6 +10,7 @@ import { MainComponent } from './main/main.component';
 import { TicketComponent } from './tickets/ticket.component';
 import { NavbarComponent } from "./navbar/navbar.component";
 import { StoreComponent } from './storecreate/store.component';
+import { ProductcreateComponent } from './productcreate/productcreate.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { StoreComponent } from './storecreate/store.component';
     MainComponent,
     TicketComponent,
     NavbarComponent,
-    StoreComponent
+    StoreComponent,
+    ProductcreateComponent
 ],
   providers: [ provideHttpClient()
   ],

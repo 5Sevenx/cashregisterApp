@@ -1,14 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ticket } from '../interface/ticket.interface';
-import { total } from '../interface/total.interfaces';
-import { TotalTicketService } from '../services/total-ticket.service';
 import { FormsModule } from '@angular/forms';
-import { Route, Router, RouterModule } from '@angular/router';
-import { CommonModule, CurrencyPipe } from '@angular/common';
-import { product } from '../interface/product.interface';
-import { HttpClient } from '@angular/common/http';
-import { ProductService } from '../services/product.service';
-import { Store } from '../interface/store.interface';
+import { Router, RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
 import { StoreService } from '../services/store.service';
 
 @Component({
@@ -50,6 +43,4 @@ export class StoreComponent  implements OnInit {
       alert("Error creating store!")
     });
 }
-
-
 }

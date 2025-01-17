@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { MainComponent } from './main/main.component';
 import { TicketComponent } from './tickets/ticket.component';
 import { StoreComponent } from './storecreate/store.component';
+import { ProductcreateComponent } from './productcreate/productcreate.component';
 
 
 const routes: Routes = [
@@ -10,6 +11,7 @@ const routes: Routes = [
   {path:'main',component: MainComponent},
   {path:'ticket',component: TicketComponent},
   {path:'store',component: StoreComponent},
+  {path:'product',component: ProductcreateComponent},
   {path:'**', redirectTo:'/main'},
 ];
 
