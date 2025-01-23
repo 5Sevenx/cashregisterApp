@@ -62,12 +62,19 @@
       <tr>
         <th scope="col" class="col-2">Id product</th>
         <th scope="col" class="col-2">Product name</th>
+        <th scope="col" class="col-2">Action</th>
       </tr>
     </thead>
     <tbody class="text-center align-middle">
       <tr *ngFor="let item of tableItems; let i = index" style="font-size: 1.1rem;">
         <td>{{ item.id }}</td>
         <td>{{ item.name }}</td>
+        <td><button
+          class="btn btn-primary rounded-pill shadow-lg px-5 py-2 fw-bold"
+          style="font-size: 1.2rem; background: #0071e3; border: none;"
+          (click)="removeItem(i)">
+          Confirm
+        </button></td>
       </tr>
     </tbody>
   </table>

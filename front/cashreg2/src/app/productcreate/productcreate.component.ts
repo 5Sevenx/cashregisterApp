@@ -91,9 +91,11 @@ export class ProductcreateComponent  implements OnInit {
   }
 
   linkProducts() {
-    if (this.selectedStore && this.tableItems.length > 0) {
 
-      const productList = this.tableItems.map(item => ({ iD_Product: item.id }));
+    if (this.selectedStore && this.tableItems.length > 0 ) {
+      const exitingStore = this.tableItems.find(i => i.id !== this.selectedStore?.iD_Store)&&this.tableItems.find(i => i.id);
+      if(exitingStore){
+        const productList = this.tableItems.map(item => ({ iD_Product: item.id }));
 
       this.tableItems = [];
 
@@ -105,10 +107,16 @@ export class ProductcreateComponent  implements OnInit {
         next: () => alert('Products successfully added to the store!'),
         error: (error) => alert('Error: ' + error.message)
       });
-    } else {
-      alert('Please select a store and add products to the table before linking!');
+    } else{
+      alert('You tying to asing entire list with one store to other. If you want to do that delete all items from the list first, then change store');
     }
+      }else {
+        alert('Please select a store and add products to the table before linking!');
+      }
   }
 
 
+  removeItem(index: number) {
+    this.tableItems.splice(index, 1);
+  }
 }
