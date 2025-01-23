@@ -1,4 +1,4 @@
-
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++CREATE NEW PRODUCT+++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 <div class="d-flex flex-column align-items-center mt-3">
   <h1 class="text-uppercase text-dark fw-bold mb-3" style="font-family: 'Arial', sans-serif; font-size: 2rem;">Create your product</h1>
   <div class="d-flex justify-content-center align-items-center" style="width: 50%; max-width: 400px; gap: 1rem;">
@@ -20,7 +20,9 @@
   </button>
   <hr style="border-top: 2px solid #ccc; width: 80%;">
 </div>
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ASIGN PRODUCT TO STORE++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 <div class="d-flex flex-column align-items-center mt-3">
   <h1 class="text-uppercase text-dark fw-bold mb-3" style="font-family: 'Arial', sans-serif; font-size: 1rem;">Assign product to store</h1>
 
@@ -42,3 +44,46 @@
       <option *ngFor="let store of product" [ngValue]="store">{{ store.name }}</option>
     </select>
 </div>
+
+<div class="d-flex justify-content-center mt-2">
+  <button
+    class="btn btn-primary rounded-pill shadow-lg px-5 py-2 fw-bold"
+    style="font-size: 1.2rem; background: #0071e3; border: none;"
+    (click)="addToTable()">
+    Add to Table
+  </button>
+</div>
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++TABLE+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<div class="d-flex flex-column align-items-center my-5">
+  <table class="table table-hover table-striped shadow rounded" style="width: 95%; background: #f9f9f9;">
+    <thead class="table-light text-center" style="font-size: 1.2rem; font-weight: 600;">
+      <tr>
+        <th scope="col" class="col-2">Id product</th>
+        <th scope="col" class="col-2">Product name</th>
+      </tr>
+    </thead>
+    <tbody class="text-center align-middle">
+      <tr *ngFor="let item of tableItems; let i = index" style="font-size: 1.1rem;">
+        <td>{{ item.id }}</td>
+        <td>{{ item.name }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ADD PRODUCTS TO STORE+++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<div class="d-flex justify-content-center mt-2">
+  <button
+    class="btn btn-primary rounded-pill shadow-lg px-5 py-2 fw-bold"
+    style="font-size: 1.2rem; background: #0071e3; border: none;"
+    (click)="linkProducts()">
+    Confirm
+  </button>
+</div>
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+

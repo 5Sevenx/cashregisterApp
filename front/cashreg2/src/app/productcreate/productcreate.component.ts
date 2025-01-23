@@ -45,6 +45,10 @@ export class ProductcreateComponent  implements OnInit {
   productname: string = '';
   productprice:number ;
 
+  tableItems:Array<{id:number,name:string,}> = [];
+
+
+
   addproduct(){
     if (this.productname.trim() === '') {
       alert('Please enter a product name!');
@@ -66,8 +70,45 @@ export class ProductcreateComponent  implements OnInit {
 
   }
 
-  addlinkmethod(){
 
+  addToTable() {
+    if (this.selectedproduct && this.selectedStore) {
+      // Check if the product already exists in the table
+      const existingProduct = this.tableItems.find(i => i.name === this.selectedproduct?.name);
+
+      if (existingProduct) {
+        alert('Product already exists in the table!');
+      } else {
+        // Add the selected product to the table
+        this.tableItems.push({
+          id: this.tableItems.length + 1,
+          name: this.selectedproduct.name
+        });
+      }
+    } else {
+      alert('Please select a product and a store before adding to the table!');
+    }
   }
+
+  linkProducts() {
+    if (this.selectedStore && this.tableItems.length > 0) {
+
+      const productList = this.tableItems.map(item => ({ iD_Product: item.id }));
+
+      this.tableItems = [];
+
+      this.ProductCreateService.addlink(
+        { iD_Product: productList },
+        this.selectedStore.iD_Store
+
+      ).subscribe({
+        next: () => alert('Products successfully added to the store!'),
+        error: (error) => alert('Error: ' + error.message)
+      });
+    } else {
+      alert('Please select a store and add products to the table before linking!');
+    }
+  }
+
 
 }

@@ -23,12 +23,12 @@ export class ProductCreateService{
     return this.http.post(`${this.baseUrl}Product/create-product`, product);
   }
 
-  addjustaddidkwhattoputeheretbh(smth: {productList: Array<{idProduct:number}>}, smthbutstore:number ){
+  addlink(smth: {iD_Product: Array<{iD_Product:number}>}, iD_Store:number ){
     const requestBody = {
-      productList: smth.productList,
-      smthbutstore:smthbutstore
+      iD_Product: smth.iD_Product,
+      iD_Store:iD_Store
     }
-    return this.http.post(`${this.baseUrl}Product/create-ticket`,requestBody);
+    return this.http.post(`${this.baseUrl}Product/create-link-to-store`,requestBody);
   }
 
   //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
