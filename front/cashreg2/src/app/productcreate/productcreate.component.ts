@@ -7,49 +7,33 @@ import { Store } from '../interface/store.interface';
 import { StoreService } from '../services/store.service';
 import { ProductService } from '../services/product.service';
 import { product } from '../interface/product.interface';
+import { SendButComponent } from '../beauty-components/send-button/send-but.component';
+import { DelButtonComponent } from '../beauty-components/del-button/del-button.component';
+
 
 
 @Component({
   selector: 'productcreate',
+  styleUrls: ['./productcreate.component.css'],
   templateUrl: './productcreate.component.html',
     standalone:true,
     imports: [
-  CommonModule,FormsModule, RouterModule
+  CommonModule,FormsModule, RouterModule, SendButComponent,
     ],
 
 })
 
 export class ProductcreateComponent  implements OnInit {
   ngOnInit(): void {
-    this.getstore();
-    this.getproduct();
   }
 
-  getstore(){
-    this.Store.getstore().subscribe(d =>{
-      this.stores = d;
-    })
-  }
+  constructor(private ProductCreateService:ProductCreateService){}
 
-  getproduct(){
-    this.Store.getall().subscribe(d =>{
-      this.product = d;
-    })
-  }
-
-  product:product [] = [];
-  stores:Store [] = [];
-  constructor(private ProductCreateService:ProductCreateService, private Store:ProductService){}
-  selectedStore:Store | null = null;
-  selectedproduct:product | null = null;
   productname: string = '';
   productprice:number ;
 
-  tableItems:Array<{id:number,name:string,}> = [];
-
-
-
   addproduct(){
+
     if (this.productname.trim() === '') {
       alert('Please enter a product name!');
       return;
@@ -66,57 +50,5 @@ export class ProductcreateComponent  implements OnInit {
       next:(response)=> alert ('Product created'),
       error:(error) => alert('Eror creating product:' + error.message)
     })
-
-
-  }
-
-
-  addToTable() {
-    if (this.selectedproduct && this.selectedStore) {
-      // Check if the product already exists in the table
-      const existingProduct = this.tableItems.find(i => i.name === this.selectedproduct?.name);
-
-      if (existingProduct) {
-        alert('Product already exists in the table!');
-      } else {
-        // Add the selected product to the table
-        this.tableItems.push({
-          id: this.tableItems.length + 1,
-          name: this.selectedproduct.name
-        });
-      }
-    } else {
-      alert('Please select a product and a store before adding to the table!');
-    }
-  }
-
-  linkProducts() {
-
-    if (this.selectedStore && this.tableItems.length > 0 ) {
-      const exitingStore = this.tableItems.find(i => i.id !== this.selectedStore?.iD_Store)&&this.tableItems.find(i => i.id);
-      if(exitingStore){
-        const productList = this.tableItems.map(item => ({ iD_Product: item.id }));
-
-      this.tableItems = [];
-
-      this.ProductCreateService.addlink(
-        { iD_Product: productList },
-        this.selectedStore.iD_Store
-
-      ).subscribe({
-        next: () => alert('Products successfully added to the store!'),
-        error: (error) => alert('Error: ' + error.message)
-      });
-    } else{
-      alert('You tying to asing entire list with one store to other. If you want to do that delete all items from the list first, then change store');
-    }
-      }else {
-        alert('Please select a store and add products to the table before linking!');
-      }
-  }
-
-
-  removeItem(index: number) {
-    this.tableItems.splice(index, 1);
   }
 }

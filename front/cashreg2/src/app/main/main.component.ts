@@ -5,12 +5,15 @@ import { CurrencyPipe, CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { Store } from '../interface/store.interface';
+import { SumbButtonComponent } from '../beauty-components/sumb-button/sumb-button.component';
+import { SendButComponent } from '../beauty-components/send-button/send-but.component';
 @Component({
   selector: 'main',
   templateUrl: './main.component.html',
   standalone:true,
+  styleUrls:['./main.component.css'],
   imports: [
-CommonModule,FormsModule, RouterModule
+CommonModule,FormsModule, RouterModule,SumbButtonComponent, SendButComponent
   ]
 })
 
@@ -56,6 +59,9 @@ export class MainComponent  implements OnInit {
       this.stores = d;
     })
   }
+
+  //button states
+  buttonState: 'idle' | 'loading' | 'success' | 'error' = 'idle';
 
   //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -128,19 +134,23 @@ export class MainComponent  implements OnInit {
     }))
   };
 
+  this.buttonState = 'loading'; //set button state
   this.productService.addProducts(payload, iD_Store).subscribe(
     response => {
+      this.buttonState = 'success';
       alert('Products sent successfully!');
       this.tableItems = [];
       this.justnameofthestore = [];
     },
     error => {
-      alert('Failed to send products');
+      this.buttonState = 'error';
+
     }
   );
 }
   //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+  
   //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++INCREMENT BUTTNOS+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
   decrementAmount(amount : number){
      //prevent negative or zero

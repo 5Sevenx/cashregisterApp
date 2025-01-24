@@ -1,0 +1,69 @@
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ASSIGN PRODUCT TO STORE++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<div class="d-flex flex-column align-items-center mt-3">
+
+  <h1 class="text-uppercase text-dark fw-bold mb-3" style="font-family: 'Inter var', sans-serif; font-size: 2rem;">Assign product to store</h1>
+
+  <div class="d-flex align-items-center mb-4" style="width: 35%;">
+    <label class="text-uppercase text-dark fw-bold me-3" style="font-family: 'Inter var', sans-serif; font-size: 1rem; white-space: nowrap;">Choose store:</label>
+    <select
+      class="form-select custom-select-box shadow-sm"
+      id="storeSelect"
+      style="width: 100%; font-size: 1rem; padding: 0.75rem;"
+      [(ngModel)]="selectedStore">
+
+      <option *ngFor="let store of stores" [ngValue]="store">{{ store.name }}</option>
+    </select>
+  </div>
+
+  <hr style="border-top: 2px solid #ccc; width: 80%;">
+
+  <div class="d-flex align-items-center mb-4" style="width: 35%;">
+    <label class="text-uppercase text-dark fw-bold me-3" style="font-family: 'Inter var', sans-serif; font-size: 1rem; white-space: nowrap;">Choose products:</label>
+    <select
+      class="form-select custom-select-box shadow-sm"
+      id="productSelect"
+      style="width: 100%; font-size: 1rem; padding: 0.75rem;"
+      [(ngModel)]="selectedproduct">
+
+      <option *ngFor="let product of product" [ngValue]="product">{{ product.name }}</option>
+    </select>
+  </div>
+</div>
+
+<div class="d-flex justify-content-center mt-2">
+  <app-sendbut (onClick)="addToTable()" [label]="'Add to table'"></app-sendbut>
+</div>
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++TABLE+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<div class="d-flex flex-column align-items-center my-5">
+
+  <table class="table table-hover table-striped shadow rounded" style="width: 95%; background: #f9f9f9;">
+    <thead class="table-light text-center" style="font-size: 1.2rem; font-weight: 600;">
+      <tr>
+        <th scope="col" class="col-2">Id product</th>
+        <th scope="col" class="col-2">Product name</th>
+        <th scope="col" class="col-2">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr *ngFor="let item of tableItems; let i = index" class="text-center align-middle" style="font-size: 1.1rem;">
+        <td class="align-middle">{{ item.id }}</td>
+        <td class="align-middle">{{ item.name }}</td>
+        <td class="align-middle">
+          <app-del-button (click)="removeItem(i)" [label]="'Delete'" class="btn btn-sm"></app-del-button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ADD PRODUCTS TO STORE+++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<div class="d-flex justify-content-center mt-2">
+  <app-sendbut (onClick)="linkProducts()" [label]="'Confirm'"></app-sendbut>
+</div>
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->

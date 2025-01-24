@@ -1,96 +1,24 @@
 <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++CREATE NEW PRODUCT+++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 <div class="d-flex flex-column align-items-center mt-3">
-  <h1 class="text-uppercase text-dark fw-bold mb-3" style="font-family: 'Arial', sans-serif; font-size: 2rem;">Create your product</h1>
+  <h1 class="text-uppercase text-dark fw-bold mb-3" style="font-family: 'Inter var', sans-serif; font-size: 2rem;">Create your product</h1>
   <div class="d-flex justify-content-center align-items-center" style="width: 50%; max-width: 400px; gap: 1rem;">
     <input
       [(ngModel)]="productname"
       type="text"
       placeholder="Product name"
-      class="form-control"
+      class="form-control custom-input"
       style="flex: 1;">
     <input
       [(ngModel)]="productprice"
       type="text"
       placeholder="Product price"
-      class="form-control"
+      class="form-control custom-input"
       style="flex: 1;">
   </div>
-  <button (click)="addproduct()" class="btn btn-primary mt-3">
-    Add Product
-  </button>
+
+
+  <app-sendbut (onClick)="addproduct()" [label]="'Add'" class="mt-3"></app-sendbut>
   <hr style="border-top: 2px solid #ccc; width: 80%;">
 </div>
-<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
-
-<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ASIGN PRODUCT TO STORE++++++++++++++++++++++++++++++++++++++++++++++++++ -->
-<div class="d-flex flex-column align-items-center mt-3">
-  <h1 class="text-uppercase text-dark fw-bold mb-3" style="font-family: 'Arial', sans-serif; font-size: 1rem;">Assign product to store</h1>
-
-    <h1 class="text-uppercase text-dark fw-bold mb-3" style="font-family: 'Arial', sans-serif; font-size: 1.0rem;">Choose store</h1>
-    <select
-      class="form-select mb-4 shadow-sm"
-      id="productSelect"
-      style="width: 35%; font-size: 1rem; padding: 0.75rem;"
-      [(ngModel)]="selectedStore">
-      <option *ngFor="let store of stores" [ngValue]="store">{{ store.name }}</option>
-    </select>
-    <hr style="border-top: 2px solid #ccc; width: 80%;">
-    <h1 class="text-uppercase text-dark fw-bold mb-1" style="font-family: 'Arial', sans-serif; font-size: 1.0rem;">Choose products</h1>
-    <select
-      class="form-select mb-4 shadow-sm"
-      id="productSelect"
-      style="width: 35%; font-size: 1rem; padding: 0.75rem;"
-      [(ngModel)]="selectedproduct">
-      <option *ngFor="let store of product" [ngValue]="store">{{ store.name }}</option>
-    </select>
-</div>
-
-<div class="d-flex justify-content-center mt-2">
-  <button
-    class="btn btn-primary rounded-pill shadow-lg px-5 py-2 fw-bold"
-    style="font-size: 1.2rem; background: #0071e3; border: none;"
-    (click)="addToTable()">
-    Add to Table
-  </button>
-</div>
-<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
-
-<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++TABLE+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
-<div class="d-flex flex-column align-items-center my-5">
-  <table class="table table-hover table-striped shadow rounded" style="width: 95%; background: #f9f9f9;">
-    <thead class="table-light text-center" style="font-size: 1.2rem; font-weight: 600;">
-      <tr>
-        <th scope="col" class="col-2">Id product</th>
-        <th scope="col" class="col-2">Product name</th>
-        <th scope="col" class="col-2">Action</th>
-      </tr>
-    </thead>
-    <tbody class="text-center align-middle">
-      <tr *ngFor="let item of tableItems; let i = index" style="font-size: 1.1rem;">
-        <td>{{ item.id }}</td>
-        <td>{{ item.name }}</td>
-        <td><button
-          class="btn btn-primary rounded-pill shadow-lg px-5 py-2 fw-bold"
-          style="font-size: 1.2rem; background: #0071e3; border: none;"
-          (click)="removeItem(i)">
-          Confirm
-        </button></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
 
 <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
-
-
-<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ADD PRODUCTS TO STORE+++++++++++++++++++++++++++++++++++++++++++++++++++ -->
-<div class="d-flex justify-content-center mt-2">
-  <button
-    class="btn btn-primary rounded-pill shadow-lg px-5 py-2 fw-bold"
-    style="font-size: 1.2rem; background: #0071e3; border: none;"
-    (click)="linkProducts()">
-    Confirm
-  </button>
-</div>
-<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
-

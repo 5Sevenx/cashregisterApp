@@ -9,13 +9,15 @@ import { product } from '../interface/product.interface';
 import { HttpClient } from '@angular/common/http';
 import { ProductService } from '../services/product.service';
 import { Store } from '../interface/store.interface';
+import { DelButtonComponent } from '../beauty-components/del-button/del-button.component';
+import { ViewButtonComponent } from '../beauty-components/view-button/view-button.component';
 
 @Component({
   selector: 'main',
   templateUrl: './ticket.component.html',
     standalone:true,
     imports: [
-  CommonModule,FormsModule, RouterModule
+  CommonModule,FormsModule, RouterModule,ViewButtonComponent
     ]
 })
 
@@ -118,7 +120,10 @@ export class TicketComponent  implements OnInit {
         });
       }
     });
+    
     console.log('Updated tabletoadd:', this.tabletoadd);
   }
 
+
 }
+

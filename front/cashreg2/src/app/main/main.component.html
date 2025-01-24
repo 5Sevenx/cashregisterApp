@@ -1,32 +1,32 @@
 <div class="d-flex flex-column align-items-center mt-3">
-  <h1 class="text-uppercase text-dark fw-bold mb-3" style="font-family: 'Arial', sans-serif; font-size: 2.5rem;">Cash Register</h1>
+  <h1 class="text-uppercase text-dark fw-bold mb-3" style="font-family: 'Inter var', sans-serif; font-size: 2.5rem;">Cash Register</h1>
   <hr style="border-top: 2px solid #ccc; width: 80%;">
 </div>
 
 <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++STORE++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 <div class="d-flex flex-column align-items-center ">
-  <h1 class="text-uppercase text-dark fw-bold mb-3" style="font-family: 'Arial', sans-serif; font-size: 1.0rem;">Choose store</h1>
+  <h1 class="text-uppercase text-dark fw-bold mb-3" style="font-family: 'Inter var', sans-serif; font-size: 1.0rem;">Choose store</h1>
   <select
-    class="form-select mb-4 shadow-sm"
+    class="form-select custom-select-box mb-4 shadow-sm"
     id="productSelect"
     style="width: 35%; font-size: 1rem; padding: 0.75rem;"
     [(ngModel)]="selectedStore">
     <option *ngFor="let store of stores" [ngValue]="store">{{ store.name }}</option>
   </select>
   <hr style="border-top: 2px solid #ccc; width: 80%;">
-  <h1 class="text-uppercase text-dark fw-bold mb-1" style="font-family: 'Arial', sans-serif; font-size: 1.0rem;">Choose products</h1>
+  <h1 class="text-uppercase text-dark fw-bold mb-1" style="font-family: 'Inter var', sans-serif; font-size: 1.0rem;">Choose products</h1>
 </div>
 <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 
 <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ Toggled Menu Content ++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 
   <div class="d-flex flex-column align-items-center mt-2">
-    <div class="shadow-lg rounded px-5 py-4" style="background: #f9f9f9; width: 60%;">
+    <div class="shadow-lg rounded px-5 py-5" style="background: #f9f9f9; width: 60%;">
 
       <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++PRODUCT++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
       <label for="productSelect" class="form-label text-dark fw-semibold" style="font-size: 1.2rem;">Choose product:</label>
       <select
-        class="form-select mb-4 shadow-sm"
+        class="form-select mb-4 custom-select-box shadow-sm"
         id="productSelect"
         style="width: 100%; font-size: 1rem; padding: 0.75rem;"
         [(ngModel)]="selectedProduct">
@@ -37,7 +37,7 @@
       <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++AMOUNT+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
       <label for="amountSelect" class="form-label text-dark fw-semibold" style="font-size: 1.2rem;">Choose amount:</label>
       <select
-        class="form-select shadow-sm"
+        class="form-select custom-select-box shadow-sm"
         id="amountSelect"
         style="width: 100%; font-size: 1rem; padding: 0.75rem;"
         [(ngModel)]="selectedAmount"
@@ -48,12 +48,7 @@
 
       <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ADD BUTTON+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
       <div class="d-flex justify-content-center mt-2">
-        <button
-          class="btn btn-primary rounded-pill shadow-lg px-5 py-2 fw-bold"
-          style="font-size: 1.2rem; background: #0071e3; border: none;"
-          (click)="addToTable()">
-          Add to Table
-        </button>
+        <app-sendbut (onClick)="addToTable()" [label]="'Add to Table'" class="mt-2"></app-sendbut>
       </div>
       <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
     </div>
@@ -61,9 +56,11 @@
 
 <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ END MENU TOGGLE ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 
+
+
 <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++PRODUCT TABLE++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
-<div class="d-flex flex-column align-items-center my-ng ">
-  <h1 class="mb-4 text-uppercase text-dark fw-bold" *ngFor="let item of justnameofthestore; let i = index" style="font-family: 'Arial', sans-serif; font-size: 2.5rem;">Products {{item._store}} </h1>
+<div class="d-flex flex-column align-items-center mt-5 my-ng ">
+  <h1 class="mb-4 mt-5 text-uppercase text-dark fw-bold" *ngFor="let item of justnameofthestore; let i = index" style="font-family: 'Inter var', sans-serif; font-size: 2.5rem;">Products {{item._store}} </h1>
   <table class="table table-hover shadow rounded" style="width: 95%; background: #f9f9f9;">
     <thead class="table-light text-center" style="font-size: 1.2rem; font-weight: 600;">
       <tr>
@@ -77,7 +74,6 @@
       <tr *ngFor="let item of tableItems; let i = index" class="table-light" style="font-size: 1.1rem;">
         <td class="fw-semibold">{{ item.name }}</td>
         <td>
-
           <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++INCREMENT BUTTONS++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
           <div class="d-flex justify-content-center align-items-center">
             <button
@@ -117,11 +113,8 @@
 
 <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++SUBMIT BUTTON+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 <div class="d-flex justify-content-end mt-4" style="width: 95%;">
-  <button
-    class="btn btn-primary rounded-pill shadow-lg px-5 py-2 fw-bold"
-    style="font-size: 1.2rem; background: #0071e3; border: none;"
-    (click)="sendTableProducts()">
-    Submit
-  </button>
+  <app-sumb-button (onClick)="sendTableProducts()" [label2]="buttonState" [label]="'Add to table'">
+</app-sumb-button>
+
 </div>
 <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->

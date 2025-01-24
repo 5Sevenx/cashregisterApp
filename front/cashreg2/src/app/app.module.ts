@@ -13,9 +13,20 @@ import { StoreComponent } from './storecreate/store.component';
 import { ProductcreateComponent } from './productcreate/productcreate.component';
 
 
+import { SendButComponent } from './beauty-components/send-button/send-but.component';
+import { DelButtonComponent } from './beauty-components/del-button/del-button.component';
+import { ViewButtonComponent } from './beauty-components/view-button/view-button.component';
+import { SumbButtonComponent } from './beauty-components/sumb-button/sumb-button.component';
+import { AssociateProductComponent } from './associate-product/associate-product.component';
+
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
+    AssociateProductComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -25,7 +36,12 @@ import { ProductcreateComponent } from './productcreate/productcreate.component'
     TicketComponent,
     NavbarComponent,
     StoreComponent,
-    ProductcreateComponent
+    ProductcreateComponent,
+    SendButComponent,
+    DelButtonComponent,
+    ViewButtonComponent,
+    SumbButtonComponent,
+
 ],
   providers: [ provideHttpClient()
   ],

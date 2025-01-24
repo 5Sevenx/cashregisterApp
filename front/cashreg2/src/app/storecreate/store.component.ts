@@ -3,13 +3,15 @@ import { FormsModule } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { StoreService } from '../services/store.service';
+import { SendButComponent } from '../beauty-components/send-button/send-but.component';
 
 @Component({
   selector: 'main',
   templateUrl: './store.component.html',
+  styleUrls:['./store.components.css'],
     standalone:true,
     imports: [
-  CommonModule,FormsModule, RouterModule
+  CommonModule,FormsModule, RouterModule,SendButComponent
     ]
 })
 
@@ -43,4 +45,5 @@ export class StoreComponent  implements OnInit {
       alert("Error creating store!")
     });
 }
+
 }
