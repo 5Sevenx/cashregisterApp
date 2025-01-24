@@ -71,15 +71,64 @@ namespace cashreg.Controllers
                     List<StoreDTO> storesDto = stores.Select(i => new StoreDTO() { ID_Store = i.ID_Store, Name = i.Name }).ToList();
                     return Ok(storesDto);
                 }
-                //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+        //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+        [HttpGet("link")]
+        public async Task <ActionResult<List<LinkDTO2>>> GetAllLink()
+        {
+            var links = await _cont.LinkStores.ToArrayAsync();
+            List<LinkDTO2> linkDTOs = links.Select(i => new LinkDTO2() { ID_Product = i.ID_Product, ID_Store = i.ID_Store }).ToList();
+            return Ok(linkDTOs);
+        }
+
+        [HttpGet("linkbyid")]
+        public async Task<ActionResult> GetByStore([FromQuery] int idstore)
+        {
+            var store = await _cont.Stores.FirstOrDefaultAsync(s => s.ID_Store == idstore);
+
+            if (store == null)
+            {
+                return NotFound($"Store with ID {idstore} not found.");
+            }
+
+            var linkedProductIds = await _cont.LinkStores
+                .Where(ls => ls.ID_Store == idstore)
+                .Select(ls => ls.ID_Product)
+                .ToListAsync();
+
+            if (!linkedProductIds.Any())
+            {
+                return NotFound($"No products linked to store with ID {idstore}.");
+            }
+
+            var products = await _cont.Products
+                .Where(p => linkedProductIds.Contains(p.ID))
+                .Select(p => new
+                {
+                    ID = p.ID,
+                    name = p.name
+                })
+                .ToListAsync();
+
+            var result = new
+            {
+                StoreName = store.Name,
+                Products = products
+            };
+
+            return Ok(result);
+        }
+
+
 
         //----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
         //-----------------------------------------------------------------------------------------SETTERS----------------------------------------------------------------------------------------------------
 
-                //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++CREATE TICKET++++++++++++++++++++++++++++++++++++++++++++
-                [HttpPost("create-ticket")]
+        //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++CREATE TICKET++++++++++++++++++++++++++++++++++++++++++++
+        [HttpPost("create-ticket")]
                 public async Task<IActionResult> CreateTicketWithProducts([FromBody] CreateTicketDTO ticketDto)
                 {
                     if (ticketDto.ProductList == null || !ticketDto.ProductList.Any())

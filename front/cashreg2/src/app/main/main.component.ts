@@ -7,6 +7,7 @@ import { RouterModule } from '@angular/router';
 import { Store } from '../interface/store.interface';
 import { SumbButtonComponent } from '../beauty-components/sumb-button/sumb-button.component';
 import { SendButComponent } from '../beauty-components/send-button/send-but.component';
+import { LinkStore } from '../interface/linkstore.interface';
 @Component({
   selector: 'main',
   templateUrl: './main.component.html',
@@ -37,12 +38,16 @@ export class MainComponent  implements OnInit {
     this.getstores();
   }
 
+  filtredproducts:product[] = [];
+
   stores:Store [] = [];
   products:product[] = [];
+  links: LinkStore[] = [];
   constructor (private productService:ProductService,
     private routerModule: RouterModule
   ){
   }
+
 
   //show products method
   getproducts(){
@@ -71,6 +76,7 @@ export class MainComponent  implements OnInit {
     if (this.selectedProduct && this.selectedStore) {
       //if the product already exists in the table
       const existingProduct = this.tableItems.find(i => i.name === this.selectedProduct?.name);
+      const foundProduct = this.products.find(product => product.id === this.selectedProduct?.id)
       //prevent user from try to add new product being on other store
       const exitingStore = this.tableItems.find(i => i.iD_Store !== this.selectedStore?.iD_Store)&&this.tableItems.find(i => i.id);
 
@@ -150,7 +156,6 @@ export class MainComponent  implements OnInit {
 }
   //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-  
   //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++INCREMENT BUTTNOS+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
   decrementAmount(amount : number){
      //prevent negative or zero
@@ -165,5 +170,32 @@ export class MainComponent  implements OnInit {
     this.tableItems[amount].price = this.tableItems[amount].amount * (this.products.find(p => p.name === this.tableItems[amount].name)?.price || 0)
   }
   //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+  //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++FILTER++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+  onStoreSelect(store: Store | null) {
+    this.selectedStore = store;
+    this.getFilteredProducts();
+  }
+
+  getFilteredProducts() {
+    const hola = this.selectedStore?.iD_Store
+    const hola2 = this.selectedProduct?.id
+    const hola3 = this.links.find(i => i.ID_Product === hola2 && i.ID_Store === hola)
+
+    if (this.selectedStore) {
+      this.productService.getlink(this.selectedStore.iD_Store).subscribe((linkedProducts) => {
+// this.filtredproducts = linkedProducts
+       /* this.filtredproducts = this.products.filter((product) =>
+          linkedProducts.some((linkedProduct) => linkedProduct.ID_Product === product.id)
+        );*/
+      });
+
+    }
+  }
+
+
+  //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 
 }

@@ -2,6 +2,7 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { product } from '../interface/product.interface';
 import { Store } from "../interface/store.interface";
+import { LinkStore } from "../interface/linkstore.interface";
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +16,9 @@ export class ProductService{
   //product array for method
   private arrproduct:product[] = [];
 
-  private arrstores:Store[] = []
+  private arrstores:Store[] = [];
+
+  private arrlinks:LinkStore[]=[];
 
   //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++HTTP METHODS+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
   getall(){
@@ -33,6 +36,10 @@ export class ProductService{
 
   getstore(){
     return this.http.get<Store[]>(`${this.baseUrl}Product/store`)
+  }
+
+  getlink(id:number){
+  return this.http.get<LinkStore[]>(`${this.baseUrl}Product/linkbyid?idstore=${id}`)
   }
 
   //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

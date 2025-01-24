@@ -85,6 +85,42 @@
   },
   {
     "ContainingType": "cashreg.Controllers.ProductController",
+    "Method": "GetAllLink",
+    "RelativePath": "api/Product/link",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[cashreg.Models.DTOS.LinkDTO2, cashreg, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "cashreg.Controllers.ProductController",
+    "Method": "GetByStore",
+    "RelativePath": "api/Product/linkbyid",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idstore",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "cashreg.Controllers.ProductController",
     "Method": "GetAllStores",
     "RelativePath": "api/Product/store",
     "HttpMethod": "GET",
