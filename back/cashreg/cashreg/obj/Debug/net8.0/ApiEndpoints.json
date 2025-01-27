@@ -85,23 +85,19 @@
   },
   {
     "ContainingType": "cashreg.Controllers.ProductController",
-    "Method": "GetAllLink",
-    "RelativePath": "api/Product/link",
+    "Method": "GetByIdProduct",
+    "RelativePath": "api/Product/getproductbyid",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
+    "Parameters": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[cashreg.Models.DTOS.LinkDTO2, cashreg, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
+        "Name": "idproduct",
+        "Type": "System.String",
+        "IsRequired": false
       }
-    ]
+    ],
+    "ReturnTypes": []
   },
   {
     "ContainingType": "cashreg.Controllers.ProductController",

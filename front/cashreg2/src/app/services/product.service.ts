@@ -3,6 +3,7 @@ import { Injectable } from "@angular/core";
 import { product } from '../interface/product.interface';
 import { Store } from "../interface/store.interface";
 import { LinkStore } from "../interface/linkstore.interface";
+import { StoreChange } from "../interface/storechange.interface";
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ export class ProductService{
   constructor(private http: HttpClient) {}
 
   //localhost variable
-  private baseUrl:string = 'http://localhost:5243/api/';
+  private baseUrl:string = 'http://localhost:5243/api/Product';
 
   //product array for method
   private arrproduct:product[] = [];
@@ -20,9 +21,11 @@ export class ProductService{
 
   private arrlinks:LinkStore[]=[];
 
+  private arrsotrechange:StoreChange [] =[];
+
   //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++HTTP METHODS+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
   getall(){
-    return this.http.get<product[]>(`${this.baseUrl}Product`)
+    return this.http.get<product[]>(`${this.baseUrl}`)
   }
 
   //Add prodcuts method
@@ -31,16 +34,22 @@ export class ProductService{
       productList: payload.productList,
       iD_Store: iD_Store
     };
-    return this.http.post(`${this.baseUrl}Product/create-ticket`,requestBody);
+    return this.http.post(`${this.baseUrl}/create-ticket`,requestBody);
   }
 
   getstore(){
-    return this.http.get<Store[]>(`${this.baseUrl}Product/store`)
+    return this.http.get<Store[]>(`${this.baseUrl}/store`);
   }
 
   getlink(id:number){
-  return this.http.get<LinkStore[]>(`${this.baseUrl}Product/linkbyid?idstore=${id}`)
+  return this.http.get<StoreChange>(`${this.baseUrl}/linkbyid?idstore=${id}`);
   }
+
+  getProductsByIds(ids: number[]) {
+    const idsParam = ids.join(',');
+    return this.http.get<product[]>(`${this.baseUrl}/getproductbyid?idproduct=${idsParam}`);
+  }
+
 
   //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 }

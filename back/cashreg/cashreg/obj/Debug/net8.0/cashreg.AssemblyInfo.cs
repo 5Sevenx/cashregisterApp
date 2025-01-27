@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("cashreg")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+780b9ed49d2029e17ea7342dc964df6a927967ea")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c24b4161e283374c34aacc52c47e4e92b1ca8683")]
 [assembly: System.Reflection.AssemblyProductAttribute("cashreg")]
 [assembly: System.Reflection.AssemblyTitleAttribute("cashreg")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

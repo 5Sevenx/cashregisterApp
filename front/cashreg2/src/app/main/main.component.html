@@ -10,7 +10,7 @@
     class="form-select custom-select-box mb-4 shadow-sm"
     id="productSelect"
     style="width: 35%; font-size: 1rem; padding: 0.75rem;"
-    [(ngModel)]="selectedStore" (change)="onStoreSelect(selectedStore)"
+    [(ngModel)]="selectedStore" (change)="onStoreChange()"
     >
     <option *ngFor="let store of stores" [ngValue]="store">{{ store.name }}</option>
   </select>
@@ -26,13 +26,17 @@
 
       <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++PRODUCT++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
       <label for="productSelect" class="form-label text-dark fw-semibold" style="font-size: 1.2rem;">Choose product:</label>
-      <select
+      <div *ngFor="let store of linkStores" >
+        <select
         class="form-select mb-4 custom-select-box shadow-sm"
         id="productSelect"
         style="width: 100%; font-size: 1rem; padding: 0.75rem;"
         [(ngModel)]="selectedProduct">
-        <option *ngFor="let product of filtredproducts" [ngValue]="product">{{ product.name }}</option>
+        <option *ngFor="let product of store.products" [ngValue]="product">{{ product.name }}</option>
+
       </select>
+      </div>
+      <!--  -->
       <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 
       <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++AMOUNT+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->

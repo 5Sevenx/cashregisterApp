@@ -8,6 +8,7 @@ import { Store } from '../interface/store.interface';
 import { SumbButtonComponent } from '../beauty-components/sumb-button/sumb-button.component';
 import { SendButComponent } from '../beauty-components/send-button/send-but.component';
 import { LinkStore } from '../interface/linkstore.interface';
+import { StoreChange } from '../interface/storechange.interface';
 @Component({
   selector: 'main',
   templateUrl: './main.component.html',
@@ -36,9 +37,14 @@ export class MainComponent  implements OnInit {
   ngOnInit(): void {
     this.getproducts();
     this.getstores();
+
   }
 
+  linkStores:StoreChange[] = [];
+
   filtredproducts:product[] = [];
+
+  newproduct:LinkStore[] = [];
 
   stores:Store [] = [];
   products:product[] = [];
@@ -172,30 +178,17 @@ export class MainComponent  implements OnInit {
   //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
   //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++FILTER++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-  onStoreSelect(store: Store | null) {
-    this.selectedStore = store;
-    this.getFilteredProducts();
-  }
-
-  getFilteredProducts() {
-    const hola = this.selectedStore?.iD_Store
-    const hola2 = this.selectedProduct?.id
-    const hola3 = this.links.find(i => i.ID_Product === hola2 && i.ID_Store === hola)
+  onStoreChange(): void {
 
     if (this.selectedStore) {
-      this.productService.getlink(this.selectedStore.iD_Store).subscribe((linkedProducts) => {
-// this.filtredproducts = linkedProducts
-       /* this.filtredproducts = this.products.filter((product) =>
-          linkedProducts.some((linkedProduct) => linkedProduct.ID_Product === product.id)
-        );*/
+      this.productService.getlink(this.selectedStore.iD_Store).subscribe((data: StoreChange) => {
+        this.linkStores.push({
+          storeName: data.storeName,
+          products: data.products
+        });
       });
-
+      this.linkStores = [];
     }
   }
-
-
   //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-
 }

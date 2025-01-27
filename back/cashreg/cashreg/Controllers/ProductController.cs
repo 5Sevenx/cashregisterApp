@@ -21,7 +21,7 @@ namespace cashreg.Controllers
 
         //-----------------------------------------------------------------------------------------GETTERS----------------------------------------------------------------------------------------------------
 
-                //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++GET ALL PRODUCTS++++++++++++++++++++++++++++++++++++++++++
+                //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++GET ALL PRODUCTS++++++++++++++++++++++++++++++++++++++++++
                 [HttpGet]
                 public async Task<ActionResult<List<ProductsDTO>>> GetAllProducts()
                 {
@@ -29,10 +29,10 @@ namespace cashreg.Controllers
                     List<ProductsDTO> productsDTOs = product.Select(item => new ProductsDTO() { ID = item.ID, name = item.name, price = item.price }).ToList();
                     return Ok(productsDTOs);
                 }
-                //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+                //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
-                //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++GET ALL TICKETS++++++++++++++++++++++++++++++++++++++++++++
+                //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++GET ALL TICKETS+++++++++++++++++++++++++++++++++++++++++++++
                 [HttpGet("ticket")]
                 public async Task<ActionResult<List<TicketDTO2>>> GetAllTickets()
                 {
@@ -49,10 +49,10 @@ namespace cashreg.Controllers
 
                     return Ok(ticketDtos);
                 }
-                //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+                //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
-                //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++GET ALL TOTALS++++++++++++++++++++++++++++++++++++++++++++
+                //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++GET ALL TOTALS++++++++++++++++++++++++++++++++++++++++++++++
                 [HttpGet("total")]
                 public async Task<ActionResult<List<TotalProductLinkDTO2>>> GetAllTotal()
                 {
@@ -60,10 +60,10 @@ namespace cashreg.Controllers
                     List<TotalProductLinkDTO2> totalDtos = total.Select(i => new TotalProductLinkDTO2() { Product_ID = i.Product_ID, Total_Id = i.Total_Id, Amount = i.Amount, Price = i.Price }).ToList();
                     return Ok(totalDtos);
                 }
-                //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+                //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
-                //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++GET ALL STORES++++++++++++++++++++++++++++++++++++++++++++
+                //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++GET ALL STORES++++++++++++++++++++++++++++++++++++++++++++++
                 [HttpGet("store")]
                 public async Task<ActionResult<List<StoreDTO>>> GetAllStores()
                 {
@@ -71,63 +71,81 @@ namespace cashreg.Controllers
                     List<StoreDTO> storesDto = stores.Select(i => new StoreDTO() { ID_Store = i.ID_Store, Name = i.Name }).ToList();
                     return Ok(storesDto);
                 }
-        //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+                //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-
-        [HttpGet("link")]
-        public async Task <ActionResult<List<LinkDTO2>>> GetAllLink()
-        {
-            var links = await _cont.LinkStores.ToArrayAsync();
-            List<LinkDTO2> linkDTOs = links.Select(i => new LinkDTO2() { ID_Product = i.ID_Product, ID_Store = i.ID_Store }).ToList();
-            return Ok(linkDTOs);
-        }
-
-        [HttpGet("linkbyid")]
-        public async Task<ActionResult> GetByStore([FromQuery] int idstore)
-        {
-            var store = await _cont.Stores.FirstOrDefaultAsync(s => s.ID_Store == idstore);
-
-            if (store == null)
-            {
-                return NotFound($"Store with ID {idstore} not found.");
-            }
-
-            var linkedProductIds = await _cont.LinkStores
-                .Where(ls => ls.ID_Store == idstore)
-                .Select(ls => ls.ID_Product)
-                .ToListAsync();
-
-            if (!linkedProductIds.Any())
-            {
-                return NotFound($"No products linked to store with ID {idstore}.");
-            }
-
-            var products = await _cont.Products
-                .Where(p => linkedProductIds.Contains(p.ID))
-                .Select(p => new
+                //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++GET LINKS BY ID++++++++++++++++++++++++++++++++++++++++++++++
+                [HttpGet("linkbyid")]
+                public async Task<ActionResult> GetByStore([FromQuery] int idstore)
                 {
-                    ID = p.ID,
-                    name = p.name
-                })
-                .ToListAsync();
+                    var store = await _cont.Stores.FirstOrDefaultAsync(s => s.ID_Store == idstore);
 
-            var result = new
+                    if (store == null)
+                    {
+                        return NotFound($"Store with ID {idstore} not found.");
+                    }
+
+                    var linkedProductIds = await _cont.LinkStores
+                        .Where(ls => ls.ID_Store == idstore)
+                        .Select(ls => ls.ID_Product)
+                        .ToListAsync();
+
+                    if (!linkedProductIds.Any())
+                    {
+                        return NotFound($"No products linked to store with ID {idstore}.");
+                    }
+
+                    var products = await _cont.Products
+                        .Where(p => linkedProductIds.Contains(p.ID))
+                        .Select(p => new
+                        {
+                            ID = p.ID,
+                            name = p.name
+                        })
+                        .ToListAsync();
+
+                    var result = new
+                    {
+                        StoreName = store.Name,
+                        Products = products
+                    };
+
+                    return Ok(result);
+                        }
+        //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+        //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++GET PRODUCT BY ID++++++++++++++++++++++++++++++++++++++++++++
+        [HttpGet("getproductbyid")]
+        public async Task<ActionResult> GetByIdProduct([FromQuery] string idproduct)
+        {
+            var ids = idproduct.Split(',').Select(int.Parse).ToList();
+
+            var products = await _cont.Products.Where(p => ids.Contains(p.ID)).ToListAsync();
+
+            if (products.Count == 0)
             {
-                StoreName = store.Name,
-                Products = products
-            };
+                return BadRequest($"No products found with the given ids");
+            }
 
-            return Ok(result);
+            var productsDTO = products.Select(product => new ProductsDTO2
+            {
+                ID = product.ID,
+                name = product.name
+            }).ToList();
+
+            return Ok(productsDTO);
+
         }
 
+        //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
         //----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
+
         //-----------------------------------------------------------------------------------------SETTERS----------------------------------------------------------------------------------------------------
 
-        //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++CREATE TICKET++++++++++++++++++++++++++++++++++++++++++++
+        //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++CREATE TICKET+++++++++++++++++++++++++++++++++++++++++++++
         [HttpPost("create-ticket")]
                 public async Task<IActionResult> CreateTicketWithProducts([FromBody] CreateTicketDTO ticketDto)
                 {
@@ -208,10 +226,10 @@ namespace cashreg.Controllers
                     return Ok(ticketDtoResult);
                 }
 
-                //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+                //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
-                //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++CREATE STORE++++++++++++++++++++++++++++++++++++++++++++
+                //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++CREATE STORE+++++++++++++++++++++++++++++++++++++++++++++++++
                 [HttpPost("create-store")]
                 public async Task<IActionResult> CreateStoreWithProducts([FromBody] StoreDTO storeDTO)
                 {
@@ -242,10 +260,10 @@ namespace cashreg.Controllers
                     return Ok(newStoreDTO);
                 }
 
-                //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+                //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
-                //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++CREATE STORE++++++++++++++++++++++++++++++++++++++++++++
+                //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++CREATE STORE+++++++++++++++++++++++++++++++++++++++++++++++++
                 [HttpPost("create-product")]
                 public async Task<IActionResult> CreateProduct([FromBody] ProductsDTO productsDTO)
                 {
@@ -275,8 +293,9 @@ namespace cashreg.Controllers
                     return Ok(newProductDto);
                 }
 
-                //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+                //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+                //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++CREATE LINK TO STORE++++++++++++++++++++++++++++++++++++++++++++
                 [HttpPost("create-link-to-store")]
                 public async Task<IActionResult> CreateLinkToProducts([FromBody] LinkStoreDTO linkStoreDTO)
                 {
@@ -310,7 +329,7 @@ namespace cashreg.Controllers
 
                     return Ok(newLinksDTO);
                 }
-
+                //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
         //----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
