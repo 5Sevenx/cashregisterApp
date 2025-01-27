@@ -1,6 +1,17 @@
 # About project
 Cash register that allows you to count purchases that were made, store data about them, and use all the data provided to create some sort of dailies showing how much cash was earned that day.
-![image](https://github.com/user-attachments/assets/405a437c-6483-40aa-8b14-36a9f570abf8)
+
+## Features Added
+
+- New pages added to amplify functionality.
+- Added the ability to:
+  - Add new products.
+  - Add new stores.
+  - Create associations between stores and products to indicate which products are available in each store.
+- A collection of simple yet effective features to enhance the project.
+
+
+![image](https://github.com/user-attachments/assets/db8e2102-e755-4502-bbae-7aa2b43d1186)
 
 
 ## Required 
@@ -10,10 +21,11 @@ Cash register that allows you to count purchases that were made, store data abou
       - Built with **Angular**.
   3. **DataBase**
       - Connect to the database that you have.
-        - Create 4 tables, and realize M:N relation.
-         <p align="center"> <img src="https://github.com/user-attachments/assets/6e146ee3-a82a-4861-af12-2cf94422ea8a" alt="Table" /> </p>
+        - Create 5 tables, and realize M:N relation.
+         <p align="center"> <img src="https://github.com/user-attachments/assets/00268885-b203-428c-a161-3aa907a89eb0" alt="Table" /> </p>
 
-        
+     
+
 ---
 
 ### Configuration 
