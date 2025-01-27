@@ -41,7 +41,6 @@ import { AssociateProductComponent } from './associate-product/associate-product
     DelButtonComponent,
     ViewButtonComponent,
     SumbButtonComponent,
-
 ],
   providers: [ provideHttpClient()
   ],

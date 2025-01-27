@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { product } from './interface/product.interface';
-import { ProductService } from './services/product.service';
 
 @Component({
   selector: 'app-root',
@@ -8,3 +6,4 @@ import { ProductService } from './services/product.service';
   standalone: false,
 })
 export class AppComponent {}
+

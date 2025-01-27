@@ -25,18 +25,27 @@
     <div class="shadow-lg rounded px-5 py-5" style="background: #f9f9f9; width: 60%;">
 
       <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++PRODUCT++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
-      <label for="productSelect" class="form-label text-dark fw-semibold" style="font-size: 1.2rem;">Choose product:</label>
-      <div *ngFor="let store of linkStores" >
+      <label for="productSelect" class="form-label text-dark fw-semibold" style="font-size: 1.2rem;">
+        Choose product:
+      </label>
+      <div *ngFor="let store of linkStores">
         <select
-        class="form-select mb-4 custom-select-box shadow-sm"
-        id="productSelect"
-        style="width: 100%; font-size: 1rem; padding: 0.75rem;"
-        [(ngModel)]="selectedProduct">
-        <option *ngFor="let product of store.products" [ngValue]="product">{{ product.name }}</option>
+          class="form-select mb-4 custom-select-box shadow-sm"
+          id="productSelect"
+          style="width: 100%; font-size: 1rem; padding: 0.75rem;"
+          [(ngModel)]="selectedProduct">
 
-      </select>
+          <option *ngIf="store.products.length < 1" disabled>
+            This store doesn't have products
+          </option>
+      
+          <option *ngFor="let product of store.products" [ngValue]="product">
+            {{ product.name }}
+          </option>
+
+        </select>
       </div>
-      <!--  -->
+
       <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 
       <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++AMOUNT+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->

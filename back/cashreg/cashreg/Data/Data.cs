@@ -54,5 +54,6 @@ namespace cashreg.Data
                 .HasForeignKey(tpl => tpl.ID_Product);
 
         }
+
     }
 }

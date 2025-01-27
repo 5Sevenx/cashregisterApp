@@ -15,4 +15,5 @@
         public int ID_Product { get; set; }
         public int ID_Store { get; set; }
     }
+
 }
